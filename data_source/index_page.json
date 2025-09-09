@@ -17,22 +17,22 @@
         },
         "Be_A_Volunteer": {
             "category": "Be_A_Volunteer",
-            "content": "Join the <b>Pharma, Pharmacology and Pharmaceutics Conference 2026</b> as a volunteer and become an integral part of one of the year’s most impactful scientific gatherings. Volunteering offers a unique opportunity to gain behind-the-scenes experience, network with global experts, and contribute to the smooth execution of a world-class event.",
+            "content": "Join the <b>Biotechnology Conference 2026</b> as a volunteer and become an integral part of one of the year’s most impactful scientific gatherings. Volunteering offers a unique opportunity to gain behind-the-scenes experience, network with global experts, and contribute to the smooth execution of a world-class event.",
             "headding": "Be A Volunteer"
         },
         "Submit_Your_Abstract": {
             "category": "Submit_Your_Abstract",
-            "content": "Present your innovative research at the Pharma, Pharmacology and Pharmaceutics Conference 2026. We welcome abstracts from scientists, academicians, and industry experts across all fields of biotechnology.",
+            "content": "Present your innovative research at the Biotechnology Conference 2026. We welcome abstracts from scientists, academicians, and industry experts across all fields of biotechnology.",
             "headding": "Submit Your Abstract"
         },
         "sessions": {
             "category": "sessions",
-            "content": "The Pharma, Pharmacology and Pharmaceutics Conference 2026 will feature a series of dynamic and engaging sessions, covering cutting-edge advancements across various fields of biotechnology. These sessions are designed to foster collaboration, stimulate innovation, and provide participants with the latest insights into the biotechnological landscape.",
+            "content": "The Biotechnology Conference 2026 will feature a series of dynamic and engaging sessions, covering cutting-edge advancements across various fields of biotechnology. These sessions are designed to foster collaboration, stimulate innovation, and provide participants with the latest insights into the biotechnological landscape.",
             "headding": "Sessions"
         },
         "footer_content": {
             "category": "footer_content",
-            "content": "Welcome to our Global Pharma, Pharmacology and Pharmaceutics Conference, where leading scientists, researchers, and innovators gather to explore the latest breakthroughs and best practices shaping the future of biotechnology.",
+            "content": "Welcome to our Global Biotechnology Conference, where leading scientists, researchers, and innovators gather to explore the latest breakthroughs and best practices shaping the future of biotechnology.",
             "headding": "Footer Content"
         },
         "offers_content": {
@@ -73,11 +73,11 @@
             "banner_conent_id": "7",
             "image": "images/banner.jpg",
             "headding": "Biotechnology at the Crossroads of Innovation and Sustainability",
-            "tag_line": "Pharma & Pharmacology-PPBC October 23-24, 2026 in Singapore",
+            "tag_line": "Biotechnology-PPBC October 23-24, 2026 in Singapore",
             "content": "Discover program highlights, registration info, and networking opportunities. Download the brochure and get ready to connect, collaborate, and innovate.",
             "page": "index",
             "status": "1",
-            "cid": "10051"
+            "cid": "10052"
         }
     },
     "sessions": [
