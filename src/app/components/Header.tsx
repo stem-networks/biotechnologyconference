@@ -32,7 +32,13 @@ const Header: React.FC<HeaderProps> = ({ generalData, registerData }) => {
   const navItems = generalData?.display_features || {}
 
 
-  const presenterFee = registerData?.increment_price["Presenter (In-Person)"]?.total || "0";
+  // const presenterFee = registerData?.increment_price["Presenter (In-Person)"]?.total || "0";
+  const [presenterFee, setPresenterFee] = useState<string | null>(null);
+
+  useEffect(() => {
+    const fee = registerData?.increment_price["Presenter (In-Person)"]?.total || null;
+    setPresenterFee(fee);
+  }, [registerData])
 
   const [isNavbarCollapsed, setIsNavbarCollapsed] = useState(true);
   const [dropdownStates, setDropdownStates] = useState<Record<string, boolean>>(
@@ -113,7 +119,7 @@ const Header: React.FC<HeaderProps> = ({ generalData, registerData }) => {
                   >
                     Register Now
                   </Link>
-                  <span> For Only ${presenterFee}</span>
+                  {presenterFee && <span> For Only ${presenterFee}</span>}
                 </li>
                 <li className="text-right">{general.venue_p1 || ""}</li>
               </ul>
@@ -156,8 +162,6 @@ const Header: React.FC<HeaderProps> = ({ generalData, registerData }) => {
 
                     {(() => {
                       const addressParts = [
-                        general.location_name,
-                        general.loc_address,
                         general.v1,
                         general.v2,
                       ].filter(Boolean) as string[];
@@ -172,9 +176,9 @@ const Header: React.FC<HeaderProps> = ({ generalData, registerData }) => {
                     })()}
                   </div>
                 ) : null}
-              </div> */}
+              </div>
 
-              {/* <div className='approved-provider-block'>
+              <div className='approved-provider-block'>
                 <Image src="/images/images/cpd.jpg" alt="CPD Accredited Conference" className='approved-prov-img' title="CPD Accredited Conference" width={360} height={130} />
               </div> */}
 
