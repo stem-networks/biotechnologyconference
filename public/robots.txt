@@ -1,4 +1,4 @@
 User-agent: *
-Disallow: 
+Allow: /
 
-Sitemap: https://pharma-meetings.com/sitemap.xml
+Sitemap: https://biotechnologyconference.com/sitemap.xml
