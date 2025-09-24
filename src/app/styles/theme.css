@@ -531,7 +531,7 @@ a {
 }
 
 .menu_footer ul li a:hover {
-	color: var(--primary-color) !important;
+	color: var(--secondary-color) !important;
 }
 
 .menu_footer2 h4 {
