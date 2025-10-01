@@ -7,7 +7,7 @@
         },
         "important_dates": {
             "category": "important_dates",
-            "content": "Stay on track with our key dates to ensure you don't miss any important deadlines or events related to the conference.",
+            "content": "Stay ahead by marking your calendars with these crucial deadlines for the upcoming PPBC-2026. Timely registration and submissions will ensure you make the most of this premier event.",
             "headding": "Important dates"
         },
         "Explore_Our_Comprehensive_Networking_Services": {
@@ -17,22 +17,22 @@
         },
         "Be_A_Volunteer": {
             "category": "Be_A_Volunteer",
-            "content": "Join the <b>Biotechnology Conference 2026</b> as a volunteer and become an integral part of one of the year’s most impactful scientific gatherings. Volunteering offers a unique opportunity to gain behind-the-scenes experience, network with global experts, and contribute to the smooth execution of a world-class event.",
+            "content": "Become a part of the <b>Biotechnology Conference 2026</b> volunteer team and be the change! Share your skills and contribute towards shaping the future of life sciences and biotechnology. Apply now to become part of this groundbreaking event!",
             "headding": "Be A Volunteer"
         },
         "Submit_Your_Abstract": {
             "category": "Submit_Your_Abstract",
-            "content": "Present your innovative research at the Biotechnology Conference 2026. We welcome abstracts from scientists, academicians, and industry experts across all fields of biotechnology.",
+            "content": "Share your findings at the Biotechnology Conference 2026. Submit an abstract and become known among leading professionals shaping biotechnology's future.",
             "headding": "Submit Your Abstract"
         },
         "sessions": {
             "category": "sessions",
-            "content": "The Biotechnology Conference 2026 will feature a series of dynamic and engaging sessions, covering cutting-edge advancements across various fields of biotechnology. These sessions are designed to foster collaboration, stimulate innovation, and provide participants with the latest insights into the biotechnological landscape.",
+            "content": "Join the Biotechnology Conference 2026 and discover innovative research, cutting-edge technologies, and groundbreaking solutions in life sciences and biotechnology. Meet with international experts and forge the future of the industry.",
             "headding": "Sessions"
         },
         "footer_content": {
             "category": "footer_content",
-            "content": "Welcome to our Global Biotechnology Conference, where leading scientists, researchers, and innovators gather to explore the latest breakthroughs and best practices shaping the future of biotechnology.",
+            "content": "Welcome to the Biotechnology Conference 2026- where science leaders and industry partners come together to shape innovation, collaboration, and development in biotechnology.",
             "headding": "Footer Content"
         },
         "offers_content": {
@@ -72,9 +72,9 @@
         "7": {
             "banner_conent_id": "7",
             "image": "images/banner.jpg",
-            "headding": "Biotechnology at the Crossroads of Innovation and Sustainability",
+            "headding": "Shaping the Future of Biotechnology through Research and Innovation",
             "tag_line": "Biotechnology-PPBC October 23-24, 2026 in Singapore",
-            "content": "Discover program highlights, registration info, and networking opportunities. Download the brochure and get ready to connect, collaborate, and innovate.",
+            "content": "Join the <b>Biotechnology Conference 2026</b> and discover the future of biotech! Download our brochure to meet industry leaders, see the latest research that is changing the world, and stay in front of emerging trends.",
             "page": "index",
             "status": "1",
             "cid": "10052"
@@ -82,54 +82,54 @@
     },
     "sessions": [
         {
-            "text": "1.\tCRISPR and Advanced Genome Editing Technologies",
-            "link": "drug-discovery-and-screening",
-            "session_short_name": "Drug Discovery and Screening"
+            "text": "1. Molecular Biotechnology & Cellular Biotechnology",
+            "link": "molecular-cellular-biotechnology",
+            "session_short_name": "Molecular & Cellular Biotechnology"
         },
         {
-            "text": "2.\tAI & Machine Learning for Biotech Innovation",
-            "link": "novel-developments-in-drug-delivery-system",
-            "session_short_name": "Pharmacogenomics"
+            "text": "2. Biotechnology in Food Science & Nutrition",
+            "link": "biotechnology-food-science-nutrition",
+            "session_short_name": "Food Science & Nutrition"
         },
         {
-            "text": "3.\tSynthetic Biology and Next-Gen Bioengineering",
-            "link": "drug-metabolism-and-toxicology",
-            "session_short_name": "Drug Metabolism and Toxicology"
+            "text": "3. Stem Cell & Regenerative Medicine",
+            "link": "stem-cell-regenerative-medicine",
+            "session_short_name": "Stem Cell & Regenerative Medicine"
         },
         {
-            "text": "4.\tmRNA and Next-Generation Vaccine Technologies",
-            "link": "drug-design-and-discovery",
-            "session_short_name": "Drug design and Discovery"
+            "text": "4. Gene Therapy & RNA Therapeutics",
+            "link": "gene-therapy-rna-therapeutics",
+            "session_short_name": "Gene Therapy & RNA Therapeutics"
         },
         {
-            "text": "5.\tGene Therapy and Regenerative Medicine Innovations",
-            "link": "novel-drug-delivery-systems",
-            "session_short_name": "Novel Drug Delivery Systems"
+            "text": "5. Biofuels, Bioenergy & Renewable Resources",
+            "link": "biofuels-bioenergy-renewable-resources",
+            "session_short_name": "Biofuels, Bioenergy & Renewable Resources"
         },
         {
-            "text": "6.\tMicrobiome Research and Human Health Applications",
-            "link": "drug-delivery-systems",
-            "session_short_name": "Drug Delivery Systems"
+            "text": "6. Bio-nanotechnology for Drug Delivery",
+            "link": "bio-nanotechnology-drug-delivery",
+            "session_short_name": "Bio-nanotechnology for Drug Delivery"
         },
         {
-            "text": "7.\tSustainable Agri-Biotech for Climate-Resilient Farming",
-            "link": "inhaled-drug-delivery",
-            "session_short_name": "Inhaled Drug Delivery"
+            "text": "7. Biomedical Biotechnology",
+            "link": "biomedical-biotechnology",
+            "session_short_name": "Biomedical Biotechnology"
         },
         {
-            "text": "8.\tEnvironmental Biotechnology & Green Solutions",
-            "link": "pharmacogenomics",
-            "session_short_name": "Pharmacogenomics"
+            "text": "8. Molecular Biology",
+            "link": "molecular-biology",
+            "session_short_name": "Molecular Biology"
         },
         {
-            "text": "9.\tEnvironmental Biotechnology & Green Solutions",
-            "link": "pharmacovigilance-and-drug-safety",
-            "session_short_name": "Pharmacovigilance and Drug Safety"
+            "text": "9. Gene Therapy",
+            "link": "gene-therapy",
+            "session_short_name": "Gene Therapy"
         },
         {
-            "text": "10.\tDigital Health and Biotechnology Integration",
-            "link": "bio-chemical-pharmacology",
-            "session_short_name": "Bio Chemical Pharmacology"
+            "text": "10. Bioremediation",
+            "link": "bioremediation",
+            "session_short_name": "Bioremediation"
         }
     ],
     "important_dates": [
