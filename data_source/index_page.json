@@ -145,19 +145,19 @@
     "venue_images": {
         "33": {
             "image": "images/g1.webp",
-            "alt_text": "Keukenhof Garden"
+            "alt_text": "Little India"
         },
         "34": {
             "image": "images/g2.webp",
-            "alt_text": "Rotterdam"
+            "alt_text": "Clarke Quay"
         },
         "35": {
             "image": "images/g3.webp",
-            "alt_text": "Giethoorn"
+            "alt_text": "Marina bay Sands"
         },
         "36": {
             "image": "images/g4.webp",
-            "alt_text": "Amsterdam"
+            "alt_text": "Gardens by the Bay"
         }
     }
 }

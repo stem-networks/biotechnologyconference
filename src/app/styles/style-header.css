@@ -629,7 +629,7 @@ li {
 }
 
 .sticky-header .logo {
-	padding: 0px 0px 2px;
+	padding: 10px 0px 2px;
 	max-width: 125px;
 }
 
@@ -8822,9 +8822,9 @@ li {
 	margin-top: 20px;
 }
 
-.test-heghlight span {
+/* .test-heghlight span {
 	text-transform: capitalize;
-}
+} */
 
 /* Planning committee block */
 
