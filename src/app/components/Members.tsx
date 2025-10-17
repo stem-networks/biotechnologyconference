@@ -71,7 +71,7 @@ const Members = () => {
           <div className="row test-imp-row">
             <div className="col-md-12 session_wrap_style1 wow fadeInUp" data-wow-delay="200ms"
               data-wow-duration="1000ms">
-              <h2>Our <span>Planning Committee</span></h2>
+              <h2>Our <span>Planning Committee 2025</span></h2>
 
             </div>
           </div>

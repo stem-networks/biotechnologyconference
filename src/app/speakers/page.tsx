@@ -51,8 +51,8 @@ const speakersData: Speaker[] = [
         id: 5,
         image: "/images/images/nigel_Smart.jpg",
         name: "Nigel J Smart",
-        institution: "University of Manchester",
-        country: "United Kingdom",
+        institution: "SMART Pharmaceutical Consulting",
+        country: "United States",
         altText: "Nigel J Smart",
     },
     {
@@ -120,6 +120,7 @@ const speakersData: Speaker[] = [
         altText: "Yongda Sun",
     },
 ];
+
 
 
 async function fetchGeneralDataStatic(): Promise<ApiResponse> {

@@ -49,8 +49,8 @@ const speakersData: Speaker[] = [
     id: 5,
     image: "/images/images/nigel_Smart.jpg",
     name: "Nigel J Smart",
-    institution: "University of Manchester",
-    country: "United Kingdom",
+    institution: "SMART Pharmaceutical Consulting",
+    country: "United States",
     altText: "Nigel J Smart",
   },
   {
@@ -79,6 +79,7 @@ const speakersData: Speaker[] = [
   },
 ];
 
+
 const Speakers = () => {
   return (
     <div className="speakers-section first-design">
@@ -91,7 +92,7 @@ const Speakers = () => {
               data-wow-duration="1000ms"
             >
               <h2>
-                Our <span>Speakers</span>
+                Our <span>Speakers 2025</span>
               </h2>
             </div>
           </div>

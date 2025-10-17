@@ -22,7 +22,7 @@ const WelcomeMessage = () => {
         <div className="welcomemsg-section">
           <div className='welcome-innerspace'>
             <div className="row justify-content-center align-items-center text-center">
-              <h2 className="welcome-title">WELCOME MESSAGE</h2>
+              <h2 className="welcome-title">WELCOME MESSAGE 2025</h2>
             </div>
 
             {/* Only wrap the part you want to slide */}
