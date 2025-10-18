@@ -54,6 +54,7 @@ export const emptyPagesData: PagesData = {
   register_details: [],
   privacy_policy: [],
   venue: [],
+  previous_conference: [],
 };
 
 export const emptyRegisterInfo: RegistrationInfo = {
