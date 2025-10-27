@@ -13,7 +13,7 @@ Intructions:
 	--third-color: #939393;
 	--fourth-color: #123a30;
 	--fifth-color: #4ab4a5;
-	--light-color: #eff9f8;
+	--light-color: #d6e8e4;
 	--preloader-color: #f9fbfe;
 	--white-color: #fff;
 	--black-color: #000;
@@ -206,7 +206,7 @@ a {
 }
 
 .banner_wrap button:hover {
-	background-color: var(--bannerhover-color);
+	background-color: var(--fourth-color);
 }
 
 .sq_mainbox {
