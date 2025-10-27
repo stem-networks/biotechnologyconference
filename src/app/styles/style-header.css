@@ -6129,7 +6129,8 @@ li {
 	padding: 20px;
 	border-radius: 0px 15px 15px 0px;
 	display: inline-block;
-	background-image: url(/images/images/img5.jpg);
+	/* background-image: url(/images/images/img5.jpg); */
+	background: radial-gradient(circle, var(--primary-color) 0%, var(--primary-color) 10%, var(--fourth-color) 100%);
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
@@ -9517,7 +9518,7 @@ input[text]:focus {
 	margin-left: 3px;
 	font-size: 15px;
 	/* font-weight: 400; */
-	color: var(--primary-color);
+	color: var(--fourth-color);
 }
 
 .marquee-wrapper .marquee-item i {
