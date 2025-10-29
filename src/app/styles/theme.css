@@ -138,15 +138,15 @@ a {
 	color: var(--white-color);
 }
 
-.main-menu .navigation>li>ul {
-	background: var(--white-color);
-	color: var(--secondary-color);
-}
-
 .main-menu .navigation>li>ul>li:hover>a {
 	background: none;
-	color: var(--secondary-color) !important;
+	color: var(--white-color) !important;
 }
+
+/* .main-menu .navigation>li>ul>li:hover>a {
+	background: none;
+	color: var(--secondary-color) !important;
+} */
 
 .main-menu .navigation>li>ul>li>ul {
 	background: var(--third-color);
