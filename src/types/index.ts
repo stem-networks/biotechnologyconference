@@ -66,6 +66,7 @@ export interface PagesData {
   venue: PageContent[];
   previous_conference: PageContent[];
   galleryEvent: PageContent[];
+  speakers_2025: PageContent[];
 }
 
 // Navigation item interface

@@ -1,7 +1,7 @@
 'use client';
 
 import Image from "next/image";
-import Link from "next/link";
+// import Link from "next/link";
 
 interface Speaker {
   id: number;
@@ -15,133 +15,107 @@ interface Speaker {
 const speakersData: Speaker[] = [
   {
     id: 1,
-    image: "/images/images/eliane_silva.webp",
-    name: "Eliane Silva",
-    institution: "University of Porto",
-    country: "Portugal",
-    altText: "Eliane Silva",
+    image: "/images/speakers-2026/Bimal_Roy_Krishna.jpg",
+    name: "Bimal Roy Krishna",
+    institution: "Touro University",
+    country: "United States",
+    altText: "Bimal Roy Krishna",
   },
   {
     id: 2,
-    image: "/images/images/malgorzata_masierek.jpg",
-    name: "Malgorzata Masierek",
-    institution: "Bioton S.A",
-    country: "Poland",
-    altText: "Malgorzata Masierek",
+    image: "/images/speakers-2026/Shu_Chun_Chang.webp",
+    name: "Shu-Chun Chang",
+    institution: "Taipei Medical University",
+    country: "Taiwan",
+    altText: "Shu-Chun Chang",
   },
   {
     id: 3,
-    image: "/images/images/kayhan_Hulya.JPG",
-    name: "Kayhan Hulya",
-    institution: "Istanbul University",
-    country: "United Kingdom",
-    altText: "Kayhan Hulya",
+    image: "/images/speakers-2026/Willie_Sai_Ho_Chan.jpg",
+    name: "Willie Sai Ho Chan",
+    institution: "China Medical University",
+    country: "Hong Kong",
+    altText: "Willie Sai Ho Chan",
   },
   {
     id: 4,
-    image: "/images/images/sadee_Wolfgang.png",
-    name: "Sadee Wolfgang",
-    institution: "The Ohio State University",
-    country: "United States",
-    altText: "Sadee Wolfgang",
+    image: "/images/speakers-2026/Aalaa_Saad.png",
+    name: "Aalaa Saad",
+    institution: "Animal Health Research Institute",
+    country: "Egypt",
+    altText: "Aalaa Saad",
   },
   {
     id: 5,
-    image: "/images/images/nigel_Smart.jpg",
-    name: "Nigel J Smart",
-    institution: "SMART Pharmaceutical Consulting",
-    country: "United States",
-    altText: "Nigel J Smart",
+    image: "/images/speakers-2026/Aziz_Maleki.jpg",
+    name: "Aziz Maleki",
+    institution: "Zanjan University of Medical Sciences",
+    country: "Iran",
+    altText: "Aziz Maleki",
   },
   {
     id: 6,
-    image: "/images/images/rafael_Vazquez_Duhalt.png",
-    name: "Rafael Vazquez Duhalt",
-    institution: "National Autonomous University of Mexico",
-    country: "Mexico",
-    altText: "Rafael Vazquez Duhalt",
-  },
-  {
-    id: 7,
-    image: "/images/images/Francis_T_Scullion.jpg",
-    name: "Francis T. Scullion",
-    institution: "Veterinary Services, N. Ireland",
-    country: "United Kingdom",
-    altText: "Francis T. Scullion",
-  },
-  {
-    id: 8,
-    image: "/images/images/Andreas_Engel.jpg",
-    name: "Andreas Engel",
-    institution: "University of Basel",
-    country: "Switzerland",
-    altText: "Andreas Engel",
+    image: "/images/speakers-2026/Ved_Prakash_Singh.jpg",
+    name: "Ved Prakash Singh",
+    institution: "Mizoram University",
+    country: "India",
+    altText: "Ved Prakash Singh",
   },
 ];
 
-
 const Speakers = () => {
   return (
-    <div className="speakers-section first-design">
-      <div className="import_wrap">
+    <div className="speakers-sections members-main-block">
+      <div className="import_wrap import-wrapping">
         <div className="auto-container clearfix">
           <div className="row test-imp-row">
-            <div
-              className="col-md-12 session_wrap_style1 wow fadeInUp"
-              data-wow-delay="200ms"
-              data-wow-duration="1000ms"
-            >
-              <h2>
-                Our <span>Speakers 2025</span>
-              </h2>
+            <div className="col-md-12 session_wrap_style1 wow fadeInUp" data-wow-delay="200ms"
+              data-wow-duration="1000ms">
+              <h2>Our <span>Speakers 2026</span></h2>
+
             </div>
           </div>
 
-          <div className="">
-            <div className="members-card-block">
-              <div className="row-member row">
-                {speakersData.map((speaker, index) => (
-                  <div
-                    className={`col-lg-3 col-md-6 col-sm-6 mb-4 ${index < 4
-                      ? 'members-specific-space'
-                      : 'member-spacing'
-                      }`}
-                    key={index}
-                  >
-                    <div className="card text-center p-3 border">
-                      <div className="custom-border-wrapper">
-                        <div className="image-wrapper mb-3">
+          <section className="blog">
+            {/* <!-- container Start--> */}
+            <div className="row aos-init aos-animate" data-aos="fade-up" data-aos-duration="400">
+              <div className="col-md-12 col-12">
+                <div className="grid-main-members-gap">
+                  {speakersData.map((member, index) => (
+                    <div
+                      key={index}
+                      className={`each-member-gap ${index >= 3 ? 'member-row-gap' : ''} wow fadeInUp`}
+                      data-wow-delay={`${200 + index * 150}ms`}
+                      data-wow-duration="1000ms"
+                    >
+                      <div className="grid-res-gap member-resp-gap">
+                        <div className="grid-res-item">
                           <Image
-                            src={speaker.image}
-                            alt={speaker.name}
-                            title={speaker.name}
+                            src={member.image}
+                            alt={member.name}
+                            title={member.name}
                             width={200}
                             height={200}
                             className="rounded-circle img-fluid"
                           />
                         </div>
-                      </div>
-                      <div className="speaker-details normal-design">
-                        <h3>{speaker.name}</h3>
-                        <p>{speaker.institution}</p>
-                        <p>{speaker.country}</p>
+                        <div className="inner-content">
+                          <h3>{member.name}</h3>
+                          <p className="members-p1 member-country">{member.country}</p>
+                          <p className="members-p1">{member.institution}</p>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
+
               </div>
             </div>
-          </div>
+          </section>
 
-          <div className="members-view-all-btn-block">
-            <Link
-              href="/speakers"
-              title="View All"
-              className="view-more-speakers-btn"
-            >
-              View All
-            </Link>
-          </div>
+          {/* <div className="members-view-all-btn-block wow fadeInUp" data-wow-delay={`${200 + speakersData.length * 150}ms`} data-wow-duration="1000ms">
+            <Link href='/speakers' title="View All" className="view-more-speakers-btn">View All</Link>
+          </div> */}
         </div>
       </div>
     </div>

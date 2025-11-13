@@ -56,6 +56,13 @@
         "meta_keywords": "Biotechnology Conference Singapore, Biotechnology Conference 2026 Speakers Biotechnology Conference Singapore Speakers, Biotechnology Experts 2026, Biotechnology Researchers, Pharmaceutical Biotechnology Speakers, Biotech Innovators 2026, and Life Sciences Conference Speakers"
       }
     ],
+    "speakers_2025": [
+      {
+        "title": "Biotechnology Conference 2025 Speakers | Switzerland | October PPBC",
+        "content": "Meet the knowledgeable speakers at the Biotechnology Conference 2025, which will take place October 08-09 in Switzerland. Learn from top scientists, business pioneers, and creative thinkers advancing biotechnology, medicine, and the life sciences.",
+        "meta_keywords": "Biotechnology Conference Switzerland, Biotechnology Conference 2025 Speakers Biotechnology Conference Switzerland Speakers, Biotechnology Experts 2025, Biotechnology Researchers, Pharmaceutical Biotechnology Speakers, Biotech Innovators 2025, and Life Sciences Conference Speakers"
+      }
+    ],
     "FAQ": [
       {
         "title": "Biotechnology Conference 2026 FAQs | Singapore | October 23-24",
@@ -150,6 +157,10 @@
         {
           "title": "2025 Conference Report",
           "link": "/previous-conference"
+        },
+        {
+          "title": "Biotech-2025 Speakers",
+          "link": "/speakers-2025"
         }
       ]
     },

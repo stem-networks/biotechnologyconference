@@ -65,54 +65,67 @@ const membersData: Speaker[] = [
 
 const Members = () => {
   return (
-    <div className="speakers-sections members-main-block">
-      <div className="import_wrap import-wrapping">
+    <div className="speakers-section first-design">
+      <div className="import_wrap">
         <div className="auto-container clearfix">
           <div className="row test-imp-row">
-            <div className="col-md-12 session_wrap_style1 wow fadeInUp" data-wow-delay="200ms"
-              data-wow-duration="1000ms">
-              <h2>Our <span>Planning Committee 2025</span></h2>
-
+            <div
+              className="col-md-12 session_wrap_style1 wow fadeInUp"
+              data-wow-delay="200ms"
+              data-wow-duration="1000ms"
+            >
+              <h2>
+                Our <span>Planning Committee 2025</span>
+              </h2>
             </div>
           </div>
 
-          <section className="blog">
-            {/* <!-- container Start--> */}
-            <div className="row aos-init aos-animate" data-aos="fade-up" data-aos-duration="400">
-              <div className="col-md-12 col-12">
-                <div className="grid-main-members-gap">
-                  {membersData.map((member, index) => (
-                    <div
-                      key={index}
-                      className={`each-member-gap ${index >= 3 ? 'member-row-gap' : ''}`}
-                    >
-                      <div className="grid-res-gap member-resp-gap">
-                        <div className="grid-res-item">
+          <div className="">
+            <div className="members-card-block">
+              <div className="row-member row">
+                {membersData.map((speaker, index) => (
+                  <div
+                    className={`col-lg-3 col-md-6 col-sm-6 mb-4 ${index < 4
+                      ? 'members-specific-space'
+                      : 'member-spacing'
+                      }  wow fadeInUp`}
+                    data-wow-delay={`${200 + index * 150}ms`}
+                    data-wow-duration="1000ms"
+                    key={index}
+                  >
+                    <div className="card text-center p-3 border">
+                      <div className="custom-border-wrapper">
+                        <div className="image-wrapper mb-3">
                           <Image
-                            src={member.image}
-                            alt={member.name}
-                            title={member.name}
+                            src={speaker.image}
+                            alt={speaker.name}
+                            title={speaker.name}
                             width={200}
                             height={200}
                             className="rounded-circle img-fluid"
                           />
                         </div>
-                        <div className="inner-content">
-                          <h3>{member.name}</h3>
-                          <p className="members-p1 member-country">{member.country}</p>
-                          <p className="members-p1">{member.institution}</p>
-                        </div>
+                      </div>
+                      <div className="speaker-details normal-design">
+                        <h3>{speaker.name}</h3>
+                        <p>{speaker.institution}</p>
+                        <p>{speaker.country}</p>
                       </div>
                     </div>
-                  ))}
-                </div>
-
+                  </div>
+                ))}
               </div>
             </div>
-          </section>
+          </div>
 
-          {/* <div className='members-view-all-btn-block'>
-            <Link href='/committee' title="View All" className="view-more-speakers-btn">View All</Link>
+          {/* <div className="members-view-all-btn-block wow fadeInUp" data-wow-delay={`${200 + membersData.length * 150}ms`} data-wow-duration="1000ms">
+            <Link
+              href="/committee"
+              title="View All"
+              className="view-more-speakers-btn"
+            >
+              View All
+            </Link>
           </div> */}
         </div>
       </div>
