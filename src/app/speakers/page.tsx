@@ -17,111 +17,61 @@ interface Speaker {
 const speakersData: Speaker[] = [
     {
         id: 1,
-        image: "/images/images/eliane_silva.webp",
-        name: "Eliane Silva",
-        institution: "University of Porto",
-        country: "Portugal",
-        altText: "Eliane Silva",
+        image: "/images/speakers-2026/Bimal_Roy_Krishna.jpg",
+        name: "Bimal Roy Krishna",
+        institution: "Touro University",
+        country: "United States",
+        altText: "Bimal Roy Krishna",
     },
     {
         id: 2,
-        image: "/images/images/malgorzata_masierek.jpg",
-        name: "Malgorzata Masierek",
-        institution: "Bioton S.A",
-        country: "Poland",
-        altText: "Malgorzata Masierek",
+        image: "/images/speakers-2026/Shu_Chun_Chang.webp",
+        name: "Shu-Chun Chang",
+        institution: "Taipei Medical University",
+        country: "Taiwan",
+        altText: "Shu-Chun Chang",
     },
     {
         id: 3,
-        image: "/images/images/kayhan_Hulya.JPG",
-        name: "Kayhan Hulya",
-        institution: "Istanbul University",
-        country: "United Kingdom",
-        altText: "Kayhan Hulya",
+        image: "/images/speakers-2026/Willie_Sai_Ho_Chan.jpg",
+        name: "Willie Sai Ho Chan",
+        institution: "China Medical University",
+        country: "Hong Kong",
+        altText: "Willie Sai Ho Chan",
     },
     {
         id: 4,
-        image: "/images/images/sadee_Wolfgang.png",
-        name: "Sadee Wolfgang",
-        institution: "The Ohio State University",
-        country: "United States",
-        altText: "Sadee Wolfgang",
+        image: "/images/speakers-2026/Aalaa_Saad.png",
+        name: "Aalaa Saad",
+        institution: "Animal Health Research Institute",
+        country: "Egypt",
+        altText: "Aalaa Saad",
     },
     {
         id: 5,
-        image: "/images/images/nigel_Smart.jpg",
-        name: "Nigel J Smart",
-        institution: "SMART Pharmaceutical Consulting",
-        country: "United States",
-        altText: "Nigel J Smart",
+        image: "/images/speakers-2026/Aziz_Maleki.jpg",
+        name: "Aziz Maleki",
+        institution: "Zanjan University of Medical Sciences",
+        country: "Iran",
+        altText: "Aziz Maleki",
     },
     {
         id: 6,
-        image: "/images/images/rafael_Vazquez_Duhalt.png",
-        name: "Rafael Vazquez Duhalt",
-        institution: "National Autonomous University of Mexico",
-        country: "Mexico",
-        altText: "Rafael Vazquez Duhalt",
+        image: "/images/speakers-2026/Ved_Prakash_Singh.jpg",
+        name: "Ved Prakash Singh",
+        institution: "Mizoram University",
+        country: "India",
+        altText: "Ved Prakash Singh",
     },
     {
         id: 7,
-        image: "/images/images/Francis_T_Scullion.jpg",
-        name: "Francis T. Scullion",
-        institution: "Veterinary Services, N. Ireland",
-        country: "United Kingdom",
-        altText: "Francis T. Scullion",
-    },
-    {
-        id: 8,
-        image: "/images/images/Andreas_Engel.jpg",
-        name: "Andreas Engel",
-        institution: "University of Basel",
-        country: "Switzerland",
-        altText: "Andreas Engel",
-    },
-    {
-        id: 9,
-        image: "/images/images/Iliana_Ivanova.jpg",
-        name: "Iliana Ivanova",
-        institution: "Sofia University",
-        country: "Bulgaria",
-        altText: "Iliana Ivanova",
-    },
-    {
-        id: 10,
-        image: "/images/images/Yarigui_Bao.jpg",
-        name: "Yarigui Bao",
-        institution: "Inner Mongolia Medical University",
-        country: "China",
-        altText: "Yarigui Bao",
-    },
-    {
-        id: 11,
-        image: "/images/images/prashant_sakharam.webp",
-        name: "Prashant Sakharam Bhokardankar",
-        institution: "Datta Meghe Ayurvedic Medical College",
+        image: "/images/speakers-2026/Shanmugam_Gunalan_Pillai.jpg",
+        name: "Shanmugam Gunalan Pillai",
+        institution: "AMET University",
         country: "India",
-        altText: "Prashant Sakharam Bhokardankar",
-    },
-    {
-        id: 12,
-        image: "/images/images/sergei_danilov.webp",
-        name: "Sergei M. Danilov",
-        institution: "University of Illinois at Chicago",
-        country: "USA",
-        altText: "Sergei M. Danilov",
-    },
-    {
-        id: 13,
-        image: "/images/images/yongda_Sun.png",
-        name: "Yongda Sun",
-        institution: "3S PharmaTech (3SPT LLC), CA",
-        country: "United States of America",
-        altText: "Yongda Sun",
+        altText: "Shanmugam Gunalan Pillai",
     },
 ];
-
-
 
 async function fetchGeneralDataStatic(): Promise<ApiResponse> {
     const baseUrl = getBaseUrl();
@@ -181,9 +131,9 @@ const speakers = () => {
                 </div>
             </div>
 
-            <h2 className="abs_wrap5 wow fadeInUp" data-wow-delay="400ms" data-wow-duration="1000ms">Our Speakers</h2>
+            <h2 className="abs_wrap5 wow fadeInUp" data-wow-delay="400ms" data-wow-duration="1000ms">Our Speakers 2026</h2>
 
-            <div className="speakers-section first-design">
+            <div className="speakers-sections members-main-block">
                 <div className='auto-container'>
                     <div className='row clearfix'>
                         <div className='col-lg-12 col-md-12 mar_center'>
@@ -192,38 +142,39 @@ const speakers = () => {
                                     data-wow-duration='1000ms'>
 
                                     <div className="">
-                                        <div className='members-card-block committee-spacing'>
-                                            <div className="row-member row">
-                                                {speakersData.map((speaker, index) => (
-                                                    <div
-                                                        className={`col-lg-3 col-md-6 col-sm-6 mb-4 ${index < 4 ? 'members-specific-space' : 'member-spacing'
-                                                            }`}
-                                                        key={index}
-                                                    >
-                                                        <div className="card text-center p-3 border">
-                                                            <div className="custom-border-wrapper">
-                                                                <div className="image-wrapper mb-3">
-                                                                    <Image
-                                                                        src={speaker.image}
-                                                                        alt={speaker.name}
-                                                                        title={speaker.name}
-                                                                        width={200}
-                                                                        height={200}
-                                                                        className="rounded-circle img-fluid"
-                                                                    />
+                                        <section className="blog">
+                                            {/* <!-- container Start--> */}
+                                            <div className="row aos-init aos-animate" data-aos="fade-up" data-aos-duration="400">
+                                                <div className="col-md-12 col-12">
+                                                    <div className="grid-main-members-gap">
+                                                        {speakersData.map((member, index) => (
+                                                            <div
+                                                                key={index}
+                                                                className={`each-member-gap ${index >= 3 ? 'member-row-gap' : ''}`}
+                                                            >
+                                                                <div className="grid-res-gap member-resp-gap">
+                                                                    <div className="grid-res-item">
+                                                                        <Image
+                                                                            src={member.image}
+                                                                            alt={member.name}
+                                                                            title={member.name}
+                                                                            width={200}
+                                                                            height={200}
+                                                                            className="rounded-circle img-fluid"
+                                                                        />
+                                                                    </div>
+                                                                    <div className="inner-content">
+                                                                        <h3>{member.name}</h3>
+                                                                        <p className="members-p1 member-country">{member.country}</p>
+                                                                        <p className="members-p1">{member.institution}</p>
+                                                                    </div>
                                                                 </div>
                                                             </div>
-                                                            <div className="speaker-details normal-design">
-                                                                <h3>{speaker.name}</h3>
-                                                                <p>{speaker.institution}</p>
-                                                                <p>{speaker.country}</p>
-                                                            </div>
-                                                        </div>
+                                                        ))}
                                                     </div>
-                                                ))}
-
+                                                </div>
                                             </div>
-                                        </div>
+                                        </section>
                                     </div>
                                 </div>
                             </div>

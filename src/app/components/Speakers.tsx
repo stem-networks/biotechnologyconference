@@ -1,7 +1,7 @@
 'use client';
 
 import Image from "next/image";
-// import Link from "next/link";
+import Link from "next/link";
 
 interface Speaker {
   id: number;
@@ -113,9 +113,9 @@ const Speakers = () => {
             </div>
           </section>
 
-          {/* <div className="members-view-all-btn-block wow fadeInUp" data-wow-delay={`${200 + speakersData.length * 150}ms`} data-wow-duration="1000ms">
+          <div className="members-view-all-btn-block wow fadeInUp" data-wow-delay={`${200 + speakersData.length * 150}ms`} data-wow-duration="1000ms">
             <Link href='/speakers' title="View All" className="view-more-speakers-btn">View All</Link>
-          </div> */}
+          </div>
         </div>
       </div>
     </div>
