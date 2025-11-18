@@ -7164,14 +7164,20 @@ li {
 
 .confr_sty1 ul li:before {
 	content: "";
-	background-image: url(/images/images/line5.jpg);
-	width: 20px;
-	height: 20px;
+	/* background-image: url(/images/images/line5.jpg); */
+	background-color: var(--fourth-color);
+	width: 10px;
+	height: 10px;
+	color: #000;
 	display: block;
 	position: absolute;
-	background-size: 10px;
-	background-repeat: no-repeat;
+	/* background-size: 10px;
+	background-repeat: no-repeat; */
 	margin: 8px 0px 0px -20px;
+	overflow: hidden;
+	/* hide outside parts */
+	-webkit-clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+	clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
 }
 
 .add_session1 {
