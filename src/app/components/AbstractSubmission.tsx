@@ -79,7 +79,7 @@ interface Errors {
 //   captchaId: string;
 // }
 
-import map2 from "../../../public/images/images/map.png";
+import map2 from "../../../public/images/images/map.svg";
 import { ApiResponse } from "@/types";
 // import Captcha, { CaptchaRef } from "./Captcha";
 
@@ -1312,6 +1312,8 @@ const AbstractSubmission: React.FC<GeneralInfoProps> = ({ generalInfo }) => {
                     src={map2}
                     alt={general?.clname ?? ""}
                     title={general?.clname ?? ""}
+                    width={55}
+                    height={48}
                   />
                   {general?.venue_p1 ?? ""}
                 </span>

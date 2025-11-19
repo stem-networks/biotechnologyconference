@@ -16,6 +16,7 @@ import "../styles/responsive.css";
 import "../styles/revolution-slider.css";
 import "../styles/owl.css";
 import { ApiResponse, RegistrationInfo } from "@/types";
+import WhatsAppWidget from "./WhatsAppWidget";
 
 interface SubItem {
   title: string;
@@ -128,7 +129,7 @@ const Header: React.FC<HeaderProps> = ({ generalData, registerData }) => {
         {/* Header Upper */}
         <div className="header-upper">
           <div className="auto-container">
-            <div style={{ justifyContent: "space-between", display: "flex" }}>
+            <div style={{ justifyContent: "space-between", display: "flex"}}>
               <div className="logo-main-block">
                 <Link
                   href="/"
@@ -150,7 +151,7 @@ const Header: React.FC<HeaderProps> = ({ generalData, registerData }) => {
                 {general.venue_p1 ? (
                   <div className="map_wrap156" style={{ textAlign: 'start' }}>
                     <Image
-                      src="/images/images/map.jpg"
+                      src="/images/images/map.svg"
                       alt={general.clname || ""}
                       width={100}
                       height={70}
@@ -181,13 +182,20 @@ const Header: React.FC<HeaderProps> = ({ generalData, registerData }) => {
               </div> */}
 
               <div className="img_text5">
-                <Link href="/register" title={general.clname}>
-                  <div className="june_wrap55">
+                <div className="june_wrap55">
+                  <div className="conf-fullname-block">
                     <h1>{general.clname}-{general.csname} {general.year}</h1>
                     <span className="main-head-box"></span>
-                    <span>Book Your Slot!</span>
                   </div>
-                </Link>
+                  <div className="slotting-block">
+                    <div>
+                      <Link href="/register" title={general.clname}>
+                        <span>Book Your Slot!</span>
+                      </Link>
+                    </div>
+                    <WhatsAppWidget />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
