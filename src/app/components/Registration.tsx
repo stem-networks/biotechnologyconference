@@ -111,6 +111,7 @@ const Registration: React.FC<RegisterProps> = ({
   const [pricesData, setPricesData] = useState<PriceData[]>([]);
   const [checkInDates, setCheckInDates] = useState<string[]>([]);
   const [checkOutDates, setCheckOutDates] = useState<string[]>([]);
+  const [checkInDatesM, setCheckInDatesM] = useState<string[]>([]);
   const [checkOutDatesM, setCheckOutDatesM] = useState<string[]>([]);
   const [activeTab, setActiveTab] = useState<string>("tab1");
   const [selectedOption, setSelectedOption] = useState<string>("inperson");
@@ -254,13 +255,83 @@ const Registration: React.FC<RegisterProps> = ({
     }
   };
 
-  const fetchData2 = (data: RegistrationInfo): void => {
-    const { accommodation_prices, checkdates, increment_price } = data;
 
-    const checkInDatesArray = checkdates["1"];
-    const checkOutDatesArray = checkdates["2"];
+  // CheckIn and checkout dates 
+  const generateRelevantDates = (
+    sdate: string,
+    edate: string,
+    month: string,
+    year: string
+  ) => {
+    const monthNames = [
+      "January", "February", "March", "April", "May", "June",
+      "July", "August", "September", "October", "November", "December"
+    ];
+
+    const monthIndex = monthNames.findIndex(
+      (m) => m.toLowerCase() === month.toLowerCase()
+    ); // zero-based
+
+    const startDay = parseInt(sdate, 10);
+    const endDay = parseInt(edate, 10);
+    const y = parseInt(year, 10);
+
+    const dates: string[] = [];
+
+    // Start date object (conference start date)
+    const confStartDate = new Date(y, monthIndex, startDay);
+
+    // We want 2 days before start and 2 days after end
+    const rangeStart = new Date(confStartDate);
+    rangeStart.setDate(confStartDate.getDate() - 2);
+
+    const confEndDate = new Date(y, monthIndex, endDay);
+    const rangeEnd = new Date(confEndDate);
+    rangeEnd.setDate(confEndDate.getDate() + 2);
+
+    // Loop from rangeStart to rangeEnd, pushing valid formatted dates
+    for (
+      let d = new Date(rangeStart);
+      d <= rangeEnd;
+      d.setDate(d.getDate() + 1)
+    ) {
+      const day = String(d.getDate()).padStart(2, "0");
+      const mon = String(d.getMonth() + 1).padStart(2, "0"); // month is 0-based
+      const yearStr = d.getFullYear();
+
+      dates.push(`${day}-${mon}-${yearStr}`);
+    }
+
+    return dates;
+  };
+
+
+  const fetchData2 = (data: RegistrationInfo): void => {
+    const { accommodation_prices, increment_price } = data;
+
+    // const checkInDatesArray = checkdates["1"];
+    // const checkOutDatesArray = checkdates["2"];
+    // setCheckInDates(checkInDatesArray);
+    // setCheckOutDates(checkOutDatesArray);
+    // setCheckOutDatesM(checkOutDatesArray);
+
+    const rawDates = generateRelevantDates(
+      general.sdate,
+      general.edate,
+      general.month,
+      general.year
+    );
+    const confStart = parseInt(general.sdate, 10);
+    const confEnd = parseInt(general.edate, 10);
+
+    // Check-in dates are 2 days before start through conference days
+    const checkInDatesArray = rawDates.filter((_, idx) => idx <= (confEnd - confStart) + 2);
+    // Check-out dates are conference days through 2 days after
+    const checkOutDatesArray = rawDates.filter((_, idx) => idx >= 2);
+
     setCheckInDates(checkInDatesArray);
     setCheckOutDates(checkOutDatesArray);
+    setCheckInDatesM(checkInDatesArray);
     setCheckOutDatesM(checkOutDatesArray);
 
     const sortedData = Object.keys(increment_price).map((type) => {
@@ -336,37 +407,88 @@ const Registration: React.FC<RegisterProps> = ({
     }
   };
 
+  // const handleAccommodationChange = (
+  //   e: React.ChangeEvent<HTMLInputElement>
+  // ): void => {
+  //   const value = e.target.value;
+  //   const updatedAccomodation =
+  //     formData.other_info["Selected Accommodation"] === value ? "" : value;
+
+  //   const selectedAccommodationPrice =
+  //     updatedAccomodation === "single"
+  //       ? parseFloat(accommodationPrices.single)
+  //       : updatedAccomodation === "double"
+  //         ? parseFloat(accommodationPrices.doubl)
+  //         : updatedAccomodation === "triple"
+  //           ? parseFloat(accommodationPrices.tri)
+  //           : 0;
+
+
+  //   setFormData((prev) => ({
+  //     ...prev,
+  //     other_info: {
+  //       ...prev.other_info,
+  //       "Selected Accommodation": updatedAccomodation,
+  //       "selected Accommodation Price": selectedAccommodationPrice,
+  //       "check In Date": updatedAccomodation
+  //         ? prev.other_info["check In Date"]
+  //         : "NA",
+  //       "check Out Date": updatedAccomodation
+  //         ? prev.other_info["check Out Date"]
+  //         : "NA",
+  //       "Num of Nights": updatedAccomodation
+  //         ? prev.other_info["Num of Nights"]
+  //         : 0,
+  //     },
+  //   }));
+
+  //   if (formData.email) {
+  //     sendFullFormData({
+  //       ...formData,
+  //       other_info: {
+  //         ...formData.other_info,
+  //         "Selected Accommodation": updatedAccomodation,
+  //         "selected Accommodation Price": selectedAccommodationPrice,
+  //         "check In Date": updatedAccomodation
+  //           ? formData.other_info["check In Date"]
+  //           : "NA",
+  //         "check Out Date": updatedAccomodation
+  //           ? formData.other_info["check Out Date"]
+  //           : "NA",
+  //         "Num of Nights": updatedAccomodation
+  //           ? formData.other_info["Num of Nights"]
+  //           : 0,
+  //       },
+  //     });
+  //   }
+  // };
+
   const handleAccommodationChange = (
     e: React.ChangeEvent<HTMLInputElement>
   ): void => {
     const value = e.target.value;
-    const updatedAccomodation =
-      formData.other_info["Selected Accommodation"] === value ? "" : value;
+    const isSameAccommodation = formData.other_info["Selected Accommodation"] === value;
+    const updatedAccommodation = isSameAccommodation ? "" : value;
 
     const selectedAccommodationPrice =
-      updatedAccomodation === "single"
+      updatedAccommodation === "single"
         ? parseFloat(accommodationPrices.single)
-        : updatedAccomodation === "double"
+        : updatedAccommodation === "double"
           ? parseFloat(accommodationPrices.doubl)
-          : updatedAccomodation === "triple"
+          : updatedAccommodation === "triple"
             ? parseFloat(accommodationPrices.tri)
             : 0;
 
+    // Always reset check-in/check-out/nights when accommodation changes or unsets
     setFormData((prev) => ({
       ...prev,
       other_info: {
         ...prev.other_info,
-        "Selected Accommodation": updatedAccomodation,
+        "Selected Accommodation": updatedAccommodation,
         "selected Accommodation Price": selectedAccommodationPrice,
-        "check In Date": updatedAccomodation
-          ? prev.other_info["check In Date"]
-          : "NA",
-        "check Out Date": updatedAccomodation
-          ? prev.other_info["check Out Date"]
-          : "NA",
-        "Num of Nights": updatedAccomodation
-          ? prev.other_info["Num of Nights"]
-          : 0,
+        "check In Date": "NA",
+        "check Out Date": "NA",
+        "Num of Nights": 0,
       },
     }));
 
@@ -375,21 +497,16 @@ const Registration: React.FC<RegisterProps> = ({
         ...formData,
         other_info: {
           ...formData.other_info,
-          "Selected Accommodation": updatedAccomodation,
+          "Selected Accommodation": updatedAccommodation,
           "selected Accommodation Price": selectedAccommodationPrice,
-          "check In Date": updatedAccomodation
-            ? formData.other_info["check In Date"]
-            : "NA",
-          "check Out Date": updatedAccomodation
-            ? formData.other_info["check Out Date"]
-            : "NA",
-          "Num of Nights": updatedAccomodation
-            ? formData.other_info["Num of Nights"]
-            : 0,
+          "check In Date": "NA",
+          "check Out Date": "NA",
+          "Num of Nights": 0,
         },
       });
     }
   };
+
 
   const formatDateWithDay = (dateStr: string): string => {
     if (dateStr === "NA") return "NA";
@@ -428,63 +545,235 @@ const Registration: React.FC<RegisterProps> = ({
     return `${monthName} ${formattedDay}, ${year} (${dayName})`;
   };
 
+  // const handleCheckInChange = (
+  //   e: React.ChangeEvent<HTMLSelectElement>
+  // ): void => {
+  //   const selectedDate = e.target.value || "NA";
+
+  //   // Convert selected date to a Date object
+  //   const [day, month, year] = selectedDate.split("-");
+  //   const selectedDateObj = new Date(`${year}-${month}-${day}`);
+
+  //   // Event date boundaries
+  //   const eventStartDate = new Date(general.startDate);
+
+  //   // Filter checkout dates
+  //   let newCheckOutDates = [];
+  //   if (selectedDateObj < eventStartDate) {
+  //     newCheckOutDates = checkOutDatesM.filter((date) => {
+  //       const [d, m, y] = date.split("-");
+  //       const dateObj = new Date(`${y}-${m}-${d}`);
+  //       return dateObj >= eventStartDate;
+  //     });
+  //   } else {
+  //     newCheckOutDates = checkOutDatesM.filter((date) => {
+  //       const [d, m, y] = date.split("-");
+  //       const dateObj = new Date(`${y}-${m}-${d}`);
+  //       return dateObj > selectedDateObj;
+  //     });
+  //   }
+
+  //   setCheckOutDates(newCheckOutDates.map((date) => date));
+
+  //   // Clear errors
+  //   setErrors((prev) => ({
+  //     ...prev,
+  //     checkIn: selectedDate !== "NA" ? "" : prev.checkIn,
+  //     checkOut: "",
+  //   }));
+
+  //   // Calculate nights
+  //   calculateNights(selectedDate, formData.other_info["check Out Date"]);
+
+  //   setFormData((prev) => ({
+  //     ...prev,
+  //     other_info: {
+  //       ...prev.other_info,
+  //       "check In Date": selectedDate,
+  //     },
+  //   }));
+
+  //   if (formData.email) {
+  //     sendFullFormData({
+  //       ...formData,
+  //       other_info: {
+  //         ...formData.other_info,
+  //         "check In Date": selectedDate,
+  //       },
+  //     });
+  //   }
+  // };
+
+  // const handleCheckInChange = (
+  //   e: React.ChangeEvent<HTMLSelectElement>
+  // ): void => {
+  //   const selectedDate = e.target.value || "NA";
+
+  //   if (selectedDate === "NA") {
+  //     // Reset dropdown options to full original arrays on no selection
+  //     setCheckInDates(checkInDatesM);
+  //     setCheckOutDates(checkOutDatesM);
+
+  //     // Reset selected dates and nights
+  //     setFormData((prev) => ({
+  //       ...prev,
+  //       other_info: {
+  //         ...prev.other_info,
+  //         "check In Date": "NA",
+  //         "check Out Date": "NA",
+  //         "Num of Nights": 0,
+  //       },
+  //     }));
+
+  //     setErrors((prev) => ({
+  //       ...prev,
+  //       checkIn: "",
+  //       checkOut: "",
+  //     }));
+  //     return;
+  //   }
+
+  //   const [day, month, year] = selectedDate.split("-");
+  //   const selectedDateObj = new Date(`${year}-${month}-${day}`);
+
+  //   // Check-out dates must be greater than selected check-in date
+  //   // So we get all checkOutDatesM dates strictly > selectedDateObj
+  //   let newCheckOutDates = checkOutDatesM.filter((date) => {
+  //     const [d, m, y] = date.split("-");
+  //     const dateObj = new Date(`${y}-${m}-${d}`);
+  //     return dateObj > selectedDateObj;
+  //   });
+
+  //   // If filter excludes all dates, allow the earliest check-out as the selectedDate itself + 1 day
+  //   if (newCheckOutDates.length === 0) {
+  //     const nextDay = new Date(selectedDateObj);
+  //     nextDay.setDate(nextDay.getDate() + 1);
+  //     const dayStr = String(nextDay.getDate()).padStart(2, "0");
+  //     const monStr = String(nextDay.getMonth() + 1).padStart(2, "0");
+  //     const yearStr = nextDay.getFullYear();
+  //     newCheckOutDates = [`${dayStr}-${monStr}-${yearStr}`];
+  //   }
+
+  //   setCheckOutDates(newCheckOutDates);
+  //   setErrors((prev) => ({
+  //     ...prev,
+  //     checkIn: selectedDate !== "NA" ? "" : prev.checkIn,
+  //     checkOut: "",
+  //   }));
+
+  //   calculateNights(selectedDate, formData.other_info["check Out Date"]);
+
+  //   setFormData((prev) => ({
+  //     ...prev,
+  //     other_info: {
+  //       ...prev.other_info,
+  //       "check In Date": selectedDate,
+  //     },
+  //   }));
+
+  //   if (formData.email) {
+  //     sendFullFormData({
+  //       ...formData,
+  //       other_info: {
+  //         ...formData.other_info,
+  //         "check In Date": selectedDate,
+  //       },
+  //     });
+  //   }
+  // };
+
+
   const handleCheckInChange = (
     e: React.ChangeEvent<HTMLSelectElement>
   ): void => {
     const selectedDate = e.target.value || "NA";
+    if (selectedDate === "NA") {
+      setCheckInDates(checkInDatesM);
+      setCheckOutDates(checkOutDatesM);
+      setFormData((prev) => ({
+        ...prev,
+        other_info: {
+          ...prev.other_info,
+          "check In Date": "NA",
+          "check Out Date": "NA",
+          "Num of Nights": 0,
+        },
+      }));
+      setErrors((prev) => ({
+        ...prev,
+        checkIn: "",
+        checkOut: "",
+      }));
+      return;
+    }
 
-    // Convert selected date to a Date object
     const [day, month, year] = selectedDate.split("-");
     const selectedDateObj = new Date(`${year}-${month}-${day}`);
 
-    // Event date boundaries
-    const eventStartDate = new Date(general.startDate);
+    let newCheckOutDates = checkOutDatesM.filter((date) => {
+      const [d, m, y] = date.split("-");
+      const dateObj = new Date(`${y}-${m}-${d}`);
+      return dateObj > selectedDateObj;
+    });
 
-    // Filter checkout dates
-    let newCheckOutDates = [];
-    if (selectedDateObj < eventStartDate) {
-      newCheckOutDates = checkOutDatesM.filter((date) => {
-        const [d, m, y] = date.split("-");
-        const dateObj = new Date(`${y}-${m}-${d}`);
-        return dateObj >= eventStartDate;
-      });
-    } else {
-      newCheckOutDates = checkOutDatesM.filter((date) => {
-        const [d, m, y] = date.split("-");
-        const dateObj = new Date(`${y}-${m}-${d}`);
-        return dateObj > selectedDateObj;
-      });
+    // If filter excludes all dates, allow the earliest check-out as the selectedDate itself + 1 day
+    if (newCheckOutDates.length === 0) {
+      const nextDay = new Date(selectedDateObj);
+      nextDay.setDate(nextDay.getDate() + 1);
+      const dayStr = String(nextDay.getDate()).padStart(2, "0");
+      const monStr = String(nextDay.getMonth() + 1).padStart(2, "0");
+      const yearStr = nextDay.getFullYear();
+      newCheckOutDates = [`${dayStr}-${monStr}-${yearStr}`];
     }
+    setCheckOutDates(newCheckOutDates);
 
-    setCheckOutDates(newCheckOutDates.map((date) => date));
-
-    // Clear errors
-    setErrors((prev) => ({
-      ...prev,
-      checkIn: selectedDate !== "NA" ? "" : prev.checkIn,
-      checkOut: "",
-    }));
-
-    // Calculate nights
-    calculateNights(selectedDate, formData.other_info["check Out Date"]);
+    // 🟩 FIX: Reset check-out and nights if out-of-range
+    const prevCheckOutDate = formData.other_info["check Out Date"];
+    const isCheckOutStillValid =
+      newCheckOutDates.includes(prevCheckOutDate) &&
+      prevCheckOutDate !== "NA";
 
     setFormData((prev) => ({
       ...prev,
       other_info: {
         ...prev.other_info,
         "check In Date": selectedDate,
+        "check Out Date": isCheckOutStillValid ? prevCheckOutDate : "NA",
+        "Num of Nights": isCheckOutStillValid ? prev.other_info["Num of Nights"] : 0,
       },
     }));
+    setErrors((prev) => ({
+      ...prev,
+      checkIn: selectedDate !== "NA" ? "" : prev.checkIn,
+      checkOut: "",
+    }));
 
+    // Add: Calculate or reset nights
+    if (isCheckOutStillValid) {
+      calculateNights(selectedDate, prevCheckOutDate);
+    } else {
+      setFormData((prev) => ({
+        ...prev,
+        other_info: {
+          ...prev.other_info,
+          "Num of Nights": 0,
+        },
+      }));
+      setNightsError(""); // Clear the error, or keep previous logic as in your code
+    }
     if (formData.email) {
       sendFullFormData({
         ...formData,
         other_info: {
           ...formData.other_info,
           "check In Date": selectedDate,
+          "check Out Date": isCheckOutStillValid ? prevCheckOutDate : "NA",
+          // "Num of Nights": isCheckOutStillValid ? prev.other_info["Num of Nights"] : 0,
         },
       });
     }
+
+
   };
 
   const handleCheckOutChange = (
@@ -1047,7 +1336,25 @@ const Registration: React.FC<RegisterProps> = ({
   // Function to show the clicked tab
   const switchTab = (tabId: string) => {
     setActiveTab(tabId);
+
+    // If switching to virtual, reset accommodation state
+    if (tabId === "tab2") {
+      setFormData((prev) => ({
+        ...prev,
+        other_info: {
+          ...prev.other_info,
+          "Selected Accommodation": "",
+          "selected Accommodation Price": 0,
+          "check In Date": "NA",
+          "check Out Date": "NA",
+          "Num of Nights": 0,
+          // Optionally reset accompanying price for clarity
+          "Price Per Accompanying Person": 0,
+        },
+      }));
+    }
   };
+
 
   // Handle checkbox change
   const toggleCheckbox = (value: string) => {
@@ -1756,7 +2063,7 @@ const Registration: React.FC<RegisterProps> = ({
                           </td>
                         </tr>
 
-                        {formData.other_info["selected Accommodation Price"] >
+                        {/* {formData.other_info["selected Accommodation Price"] >
                           0 && (
                             <>
                               <tr>
@@ -1813,7 +2120,51 @@ const Registration: React.FC<RegisterProps> = ({
                                 </td>
                               </tr>
                             </>
-                          )}
+                          )} */}
+
+                        {activeTab === "tab1" && formData.other_info["selected Accommodation Price"] > 0 && (
+                          <>
+                            <tr>
+                              <td className="re_p3">Accommodation Price Per Night:</td>
+                              <td className="re_p3 text-right">
+                                ${formData.other_info["selected Accommodation Price"]}
+                              </td>
+                            </tr>
+                            <tr>
+                              <td className="re_p3">Check In Date:</td>
+                              <td className="re_p3 text-right">
+                                {formData.other_info["check In Date"] && formData.other_info["check In Date"] !== "NA"
+                                  ? formatDateWithDay(formData.other_info["check In Date"])
+                                  : "NA"}
+                              </td>
+                            </tr>
+                            <tr>
+                              <td className="re_p3">Check Out Date:</td>
+                              <td className="re_p3 text-right">
+                                {formData.other_info["check Out Date"] && formData.other_info["check Out Date"] !== "NA"
+                                  ? formatDateWithDay(formData.other_info["check Out Date"])
+                                  : "NA"}
+                              </td>
+                            </tr>
+                            <tr>
+                              <td className="re_p3">Total No. Nights:</td>
+                              <td className="re_p3 text-right">
+                                {formData.other_info["Num of Nights"] || 0}
+                              </td>
+                            </tr>
+                            {(formData.other_info["check In Date"] && formData.other_info["check In Date"] !== "NA"
+                              && formData.other_info["check Out Date"] && formData.other_info["check Out Date"] !== "NA"
+                              && formData.other_info["Num of Nights"] > 0) && (
+                                <tr>
+                                  <td className="re_p3_main">Total Accommodation Price:</td>
+                                  <td className="re_p3_main text-right">
+                                    ${formData.other_info["selected Accommodation Price"] * formData.other_info["Num of Nights"]}
+                                  </td>
+                                </tr>
+                              )}
+                          </>
+                        )}
+
 
                         {formData.no_accompanying > 0 && (
                           <tr>
