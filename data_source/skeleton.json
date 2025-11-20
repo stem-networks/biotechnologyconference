@@ -148,7 +148,7 @@
     },
     {
       "title": "Scientific Program",
-      "link": "/scientific-program"
+      "link": "/scientific-program/2025"
     },
     {
       "title": "Previous Conference",
@@ -156,11 +156,11 @@
       "subItems": [
         {
           "title": "2025 Conference Report",
-          "link": "/previous-conference"
+          "link": "/previous-conference/2025"
         },
         {
           "title": "Biotech-2025 Speakers",
-          "link": "/speakers-2025"
+          "link": "/speakers/2025"
         }
       ]
     },

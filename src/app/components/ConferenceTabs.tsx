@@ -166,7 +166,7 @@ export default function ConferenceSessions() {
       </section>
 
       <div className="gallery-complete-block wow fadeInUp">
-        <Link href="./gallery-of-event" className="gallery-complete-btn" title="View Complete Gallery">
+        <Link href="/previous-conference/2025/gallery" className="gallery-complete-btn" title="View Complete Gallery">
           View Complete Gallery
         </Link>
       </div>
