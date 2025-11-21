@@ -72,9 +72,19 @@ export async function generateMetadata(): Promise<Metadata> {
       title: eventName,
       description: pageData?.register?.[0]?.content || "",
       keywords: pageData?.register?.[0]?.meta_keywords || "",
+      // icons: {
+      //   icon: `${general?.site_url || ""}/images/images/favicon.png`,
+      //   apple: `${general?.site_url || ""}/images/images/apple-touch-icon.png`, // Add your Apple touch icon path here
+      // },
       icons: {
-        icon: `${general?.site_url || ""}/images/images/favicon.png`,
-        apple: `${general?.site_url || ""}/images/images/apple-touch-icon.png`, // Add your Apple touch icon path here
+        icon: [
+          { url: `${general?.site_url || ""}/favicon.ico`, type: "image/x-icon" },
+          { url: `${general?.site_url || ""}/images/images/favicon.png`, type: "image/png", sizes: "192x192" },
+          { url: `${general?.site_url || ""}/images/images/favicon.png`, type: "image/png", sizes: "32x32" },
+        ],
+        apple: [
+          { url: `${general?.site_url || ""}/images/images/apple-touch-icon.png`, sizes: "180x180" },
+        ],
       },
       openGraph: {
         images: `${general?.site_url || ""}/images/images/opengraph_image.jpg`,
