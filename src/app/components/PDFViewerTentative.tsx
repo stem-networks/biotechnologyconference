@@ -182,7 +182,7 @@ const PDFViewerTentative = ({ fileUrl }: PDFViewerProps) => {
                     ) : (
                         <p className='update-soon-msg wow fadeInUp animated'
                         >
-                            We will update it soon.
+                            Will be updated soon
                         </p>
                     )}
                 </div>
