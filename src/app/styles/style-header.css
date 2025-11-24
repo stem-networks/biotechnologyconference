@@ -9692,7 +9692,7 @@ input[text]:focus {
 	}
 
 	50% {
-		transform: scale(1.06);
+		transform: scale(1.08);
 		/* box-shadow: 0 0 20px #f06292; */
 	}
 
@@ -9709,14 +9709,19 @@ input[text]:focus {
 		text-shadow: 0 0 5px var(--primary-color);
 	}
 
+	15% {
+		color: var(--modalred-color);
+		text-shadow: 0 0 8px var(--modalred-color);
+	}
+
 	25% {
-		color: var(--fourth-color);
-		text-shadow: 0 0 8px var(--fourth-color);
+		color: #1bd741;
+		text-shadow: 0 0 8px #1bd741;
 	}
 
 	50% {
-		color: var(--primary-color);
-		text-shadow: 0 0 10px var(--primary-color);
+		color: var(--bannerhover-color);
+		text-shadow: 0 0 10px var(--bannerhover-color);
 	}
 
 	75% {
@@ -9725,8 +9730,8 @@ input[text]:focus {
 	}
 
 	100% {
-		color: var(--fourth-color);
-		text-shadow: 0 0 10px var(--fourth-color);
+		color: var(--offerbg-color);
+		text-shadow: 0 0 10px var(--offerbg-color);
 	}
 }
 

@@ -69,7 +69,7 @@ const HeroSlider: React.FC<BannerSectionProps> = ({
 
     const shouldShowModal = (): boolean => {
         if (typeof window === "undefined") return true;
-        const lastInteraction = localStorage.getItem("BrochureFormClosed");
+        const lastInteraction = localStorage.getItem("TentativeFormClosed");
         if (!lastInteraction) return true;
 
         const lastInteractionTime = parseInt(lastInteraction, 10);
@@ -83,7 +83,7 @@ const HeroSlider: React.FC<BannerSectionProps> = ({
 
         if (shouldShowModal()) {
             const timer = setTimeout(() => {
-                setModalType('brochure')
+                setModalType('tentative')
                 setShowModal9(true);
             }, 20000);
 
@@ -140,7 +140,7 @@ const HeroSlider: React.FC<BannerSectionProps> = ({
     const closeBrochureModal = () => {
         setShowModal9(false);
         if (typeof window !== "undefined") {
-            localStorage.setItem("BrochureFormClosed", Date.now().toString());
+            localStorage.setItem("TentativeFormClosed", Date.now().toString());
         }
     };
 
@@ -206,7 +206,7 @@ const HeroSlider: React.FC<BannerSectionProps> = ({
         try {
 
             if (typeof window !== "undefined")
-                localStorage.setItem("brochureFormSubmitted", Date.now().toString());
+                localStorage.setItem("TentativeFormSubmitted", Date.now().toString());
 
             const payload = {
                 first_name: utf8ToBase64(brochureFormData.first_name.trim()),
@@ -280,7 +280,7 @@ const HeroSlider: React.FC<BannerSectionProps> = ({
         let fileURL = '';
 
         if (modalType === 'tentative') {
-            fileName = `${conferenceName} Scientific Program.pdf`;
+            fileName = `${conferenceName} Tentative Program.pdf`;
             fileURL = `${fileName}`;
         } else {
             fileName = `${conferenceName}_Brochure.pdf`;
@@ -355,10 +355,10 @@ const HeroSlider: React.FC<BannerSectionProps> = ({
                                         <i className="fa fa-bell bell-icon" aria-hidden="true"></i>
                                         <span>Avail special discounts for students and groups</span>
                                     </div>
-                                    {/* <div className="marquee-item">
-                    <i className="fa fa-file-pdf-o" aria-hidden="true"></i>
-                    <span className='tentative-pdf-down highlight-program'><button onClick={() => openBrochureModal('tentative')} title={`${general.clogotext} Scientific Program`}>Download the Tentative Scientific Program (PDF)</button></span>
-                  </div>  */}
+                                    <div className="marquee-item">
+                                        <i className="fa fa-file-pdf-o" aria-hidden="true"></i>
+                                        <span className='tentative-pdf-down highlight-program'><button onClick={() => openBrochureModal('tentative')} title={`${general.clogotext} Tentative Program`}>Download the Tentative Program (PDF)</button></span>
+                                    </div>
                                     <div className="marquee-item">
                                         <i className="fa fa-bell bell-icon" aria-hidden="true"></i>
                                         <span className="me-2">For discount queries contact </span>
@@ -401,10 +401,10 @@ const HeroSlider: React.FC<BannerSectionProps> = ({
                                         <i className="fa fa-bell bell-icon" aria-hidden="true"></i>
                                         <span>Avail special discounts for students and groups</span>
                                     </div>
-                                    {/* <div className="marquee-item">
-                    <i className="fa fa-file-pdf-o" aria-hidden="true"></i>
-                    <span className='tentative-pdf-down highlight-program'><button onClick={() => openBrochureModal('tentative')} title={`${general.clogotext} Scientific Program`}>Download the Tentative Scientific Program (PDF)</button></span>
-                  </div>  */}
+                                    <div className="marquee-item">
+                                        <i className="fa fa-file-pdf-o" aria-hidden="true"></i>
+                                        <span className='tentative-pdf-down highlight-program'><button onClick={() => openBrochureModal('tentative')} title={`${general.clogotext} Tentative Program`}>Download the Tentative Program (PDF)</button></span>
+                                    </div>
                                     <div className="marquee-item">
                                         <i className="fa fa-bell bell-icon" aria-hidden="true"></i>
                                         <span className="me-2">For discount queries contact </span>
@@ -462,7 +462,7 @@ const HeroSlider: React.FC<BannerSectionProps> = ({
                                         style={{ marginBottom: "35px" }}
                                     ></i>
                                 </div>
-                                <h4 className="modal-title w-100"> {modalType === 'brochure' ? 'Download Brochure' : 'Download Scientific Program'}</h4>
+                                <h4 className="modal-title w-100"> {modalType === 'brochure' ? 'Download Brochure' : 'Download Tentative Program'}</h4>
                                 <button
                                     type="button"
                                     className="close"
@@ -677,7 +677,7 @@ const HeroSlider: React.FC<BannerSectionProps> = ({
                                         &#10003;
                                     </i>
                                 </div>
-                                <h4 className="modal-title w-100">{modalType === 'brochure' ? 'Brochure downloading..!' : 'Scientific program downloading..!'}</h4>
+                                <h4 className="modal-title w-100">{modalType === 'brochure' ? 'Brochure downloading..!' : 'Tentative Program downloading..!'}</h4>
                                 <p>
                                     Thank you for your interest. If you have any questions, feel
                                     free to reach out to us.{" "}
