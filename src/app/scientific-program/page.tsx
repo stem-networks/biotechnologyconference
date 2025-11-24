@@ -64,7 +64,7 @@ const ScientificProgram = async () => {
   const general_info = general?.data || {};
 
 
-  const fileUrl = `/${general_info.csname}_tentative_program.pdf`; // Make sure this file is inside your public folder
+  const fileUrl = `/${general_info.csname}_scientific_program.pdf`; // Make sure this file is inside your public folder
 
   return (
     <div>
@@ -72,7 +72,7 @@ const ScientificProgram = async () => {
       <div className="brand_wrap">
         <div className="auto-container">
           <div className="row">
-            <div className="col-md-12">
+            <div className="col-md-12 wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1000ms">
               <Link href="/">Home</Link> <i className="fa fa-angle-right"></i>
               <span>Scientific Program</span>
             </div>

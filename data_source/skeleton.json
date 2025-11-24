@@ -100,9 +100,16 @@
     ],
     "scientific_program": [
       {
-        "title": "Biotechnology Conference 2026 Scientific Program | Singapore | October 23-24",
-        "content": "Examine the Scientific Program for the 2026 Biotechnology Conference, which will take place October 23–24 in Singapore. Learn about the most recent advancements in biotechnology, pharmaceuticals, and life sciences through comprehensive session schedules, expert presentations, workshops, and panel discussions.",
-        "meta_keywords": "Biotechnology Conference 2026 Scientific Program, Biotechnology Conference Singapore Program, Biotechnology Conference Singapore Program, Biotech Sessions 2026, Biotechnology Workshops, Life Sciences Scientific Program, Pharmaceutical Biotechnology Sessions, Biotech Conference Schedule"
+        "title": "Biotechnology Conference 2025 Scientific Program | Singapore",
+        "content": "Examine the Scientific Program for the 2025 Biotechnology Conference, which will take place in Singapore. Learn about the most recent advancements in biotechnology, pharmaceuticals, and life sciences through comprehensive session schedules, expert presentations, workshops, and panel discussions.",
+        "meta_keywords": "Biotechnology Conference 2025 Scientific Program, Biotechnology Conference Singapore Program, Biotechnology Conference Singapore Program, Biotech Sessions 2025, Biotechnology Workshops, Life Sciences Scientific Program, Pharmaceutical Biotechnology Sessions, Biotech Conference Schedule"
+      }
+    ],
+    "tentative_program": [
+      {
+        "title": "Biotechnology Conference 2026 Tentative Program | Singapore | October 23-24",
+        "content": "Examine the Tentative Program for the 2026 Biotechnology Conference, which will take place October 23–24 in Singapore. Learn about the most recent advancements in biotechnology, pharmaceuticals, and life sciences through comprehensive session schedules, expert presentations, workshops, and panel discussions.",
+        "meta_keywords": "Biotechnology Conference 2026 Tentative Program, Biotechnology Conference Singapore Program, Biotechnology Conference Singapore Program, Biotech Sessions 2026, Biotechnology Workshops, Life Sciences Tentative Program, Pharmaceutical Biotechnology Sessions, Biotech Conference Schedule"
       }
     ],
     "register_details": [
@@ -147,8 +154,8 @@
       "link": "/sessions"
     },
     {
-      "title": "Scientific Program",
-      "link": "/scientific-program/2025"
+      "title": "Tentative Program",
+      "link": "/tentative-program"
     },
     {
       "title": "Previous Conference",
@@ -161,6 +168,10 @@
         {
           "title": "Biotech-2025 Speakers",
           "link": "/speakers/2025"
+        },
+        {
+          "title": "Scientific Program",
+          "link": "/scientific-program/2025"
         }
       ]
     },

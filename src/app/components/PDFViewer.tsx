@@ -22,7 +22,7 @@ const PDFViewer = ({ fileUrl }: PDFViewerProps) => {
 
     return (
         <div className="auto-container">
-            <div className="scientific-program-container">
+            <div className="scientific-program-container wow fadeInUp animated">
                 <Worker workerUrl={`https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js`}>
                     <Viewer fileUrl={fileUrl} />
                 </Worker>

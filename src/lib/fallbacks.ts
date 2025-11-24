@@ -57,6 +57,7 @@ export const emptyPagesData: PagesData = {
   previous_conference: [],
   galleryEvent: [],
   speakers_2025: [],
+  tentative_program: [],
 };
 
 export const emptyRegisterInfo: RegistrationInfo = {
