@@ -81,14 +81,14 @@
     "increment_price": {
         "Presenter (In-Person)": {
             "Standard Registration Fee": "$1399",
-            "total": "699",
-            "min": "50",
+            "total": "749",
+            "min": "46",
             "conference_dt": "2025-09-21"
         },
         "Listener (In-Person)": {
             "Standard Registration Fee": "$1499",
-            "total": "749",
-            "min": "50",
+            "total": "799",
+            "min": "47",
             "conference_dt": "2025-09-21"
         },
         "Presenter (Virtual)": {
@@ -105,8 +105,8 @@
         },
         "Student/Young Researcher": {
             "Standard Registration Fee": "$699",
-            "total": "349",
-            "min": "50",
+            "total": "399",
+            "min": "43",
             "conference_dt": "2025-09-21"
         }
     },
