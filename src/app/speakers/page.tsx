@@ -71,6 +71,14 @@ const speakersData: Speaker[] = [
         country: "India",
         altText: "Shanmugam Gunalan Pillai",
     },
+    {
+        id: 8,
+        image: "/images/speakers-2026/tarek_aboul.jpg",
+        name: "Tarek Aboul Fadl",
+        institution: "Assiut University",
+        country: "Egypt",
+        altText: "Tarek Aboul Fadl",
+    },
 ];
 
 async function fetchGeneralDataStatic(): Promise<ApiResponse> {
