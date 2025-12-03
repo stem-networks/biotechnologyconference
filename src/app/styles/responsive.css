@@ -106,7 +106,7 @@
 	}
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 992px) {
 
 	.main-menu .navigation>li>ul,
 	.main-menu .navigation>li>ul>li>ul {
@@ -147,10 +147,6 @@
 	.main-header .header-upper .upper-column {
 		margin-left: 0px;
 		padding-right: 15px;
-	}
-
-	.sticky-header {
-		display: none;
 	}
 
 	.two-col-fluid .content-column,
@@ -209,7 +205,12 @@
 	}
 }
 
-@media only screen and (max-width: 912px) {
+@media only screen and (max-width: 991px) {
+
+	.sticky-header {
+		display: none;
+	}
+
 	.date-mainblock-color1 {
 		margin-bottom: 40px;
 	}
@@ -1062,9 +1063,9 @@
 		width: 100%;
 	}
 
-	.session_wrap_style1 p {
+	/* .session_wrap_style1 p {
 		padding: 0px !important;
-	}
+	} */
 
 	.set_gray_wrap2 {
 		width: 40%;
@@ -1084,9 +1085,9 @@
 
 
 @media only screen and (min-width: 1025px) and (max-width: 1400px) {
-	.session_wrap1 {
+	/* .session_wrap1 {
 		width: 100%;
-	}
+	} */
 
 	.session_wrap_style1 p {
 		padding: 0px !important;
@@ -1113,5 +1114,320 @@
 @media only screen and (min-width: 1200px) and (max-width: 1400px) {
 	.blog .inner-content {
 		padding: 10px 20px 10px 20px;
+	}
+}
+
+/* -------------------
+Updating Responsive
+------------------- */
+
+@media only screen and (min-width: 1211px) and (max-width: 1380px) {
+	.may_wrap15 {
+		font-size: 23px !important;
+	}
+
+	.accordion-box .block .acc-btn {
+		font-size: 17px !important;
+	}
+
+	.box_wrap_fot1 {
+		padding: 45px 20px 45px 60px;
+	}
+
+	#enquiryForm .recaptcha-wrapper {
+		margin: 0 auto 0 0;
+	}
+
+	/* .footer_add_st1 p {
+		width: 80%;
+		margin: 0 auto;
+	} */
+
+	.past-conference-page .custom-pill-buttons .pill-btn {
+		padding: 4px 15px;
+	}
+
+	.session_wrap_style1 h2+p {
+		padding: 0px !important;
+		width: 65%;
+	}
+}
+
+@media only screen and (min-width: 1381px) and (max-width: 1500px) {
+
+	.accordion-box .block .acc-btn {
+		font-size: 19px !important;
+	}
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1210px) {
+	.main-menu .navigation>li {
+		margin-left: 16px;
+	}
+
+	.main-menu .navigation>li>a {
+		font-size: 16px;
+	}
+
+	.sticky-header .main-menu .navigation>li>a {
+		padding: 15px 10px;
+	}
+
+	.session_wrap_style1 h2+p {
+		padding: 0px !important;
+		width: 65%;
+	}
+
+	.past-conference-page .custom-pill-buttons .pill-btn {
+		padding: 6px 6px;
+		font-size: 15px;
+	}
+
+	.nur_wrap11 {
+		font-size: 36px;
+	}
+
+	.nur_wrap22 {
+		font-size: 38px;
+	}
+
+	.nur_wrap33,
+	.nur_wrap3 {
+		font-size: 27px !important;
+	}
+
+	.box_wrap_fot1 {
+		padding: 45px 20px 45px 60px;
+	}
+
+	.accordion-box .block .acc-btn {
+		font-size: 17px !important;
+	}
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1023px) {
+	.main-header .links-nav li a {
+		font-size: 14px;
+	}
+
+	.main-menu .navigation>li {
+		margin-left: 14px;
+	}
+
+	.main-menu .navigation>li>a {
+		font-size: 16px;
+	}
+
+	.sticky-header .main-menu .navigation>li>a {
+		padding: 15px 8px;
+	}
+
+	.main-menu .navigation>li {
+		margin-right: 0px;
+	}
+
+	.session_wrap_style1 h2+p {
+		padding: 0px !important;
+		width: 80%;
+	}
+
+	.nur_wrap2 {
+		font-size: 29px !important;
+	}
+
+	.past-conference-page .custom-pill-buttons .pill-btn {
+		padding: 6px 6px;
+		font-size: 15px;
+	}
+
+	.nur_wrap11 {
+		font-size: 36px;
+	}
+
+	.nur_wrap22 {
+		font-size: 38px;
+	}
+
+	.nur_wrap33,
+	.nur_wrap3 {
+		font-size: 27px !important;
+	}
+
+	.accordion-box .block .acc-btn {
+		font-size: 17px !important;
+	}
+
+	.box_wrap_fot1 {
+		padding: 45px 20px 45px 60px;
+	}
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+	.earl_wrap,
+	.may_wrap15 span {
+		font-size: 24px !important;
+		line-height: 30px !important;
+	}
+
+	.ess_wrap5,
+	.call_cont_st1 {
+		width: 80%;
+		margin: 0 auto;
+	}
+
+	.last_st1,
+	.last_st3 {
+		text-align: center;
+		width: 100%;
+		padding: 0;
+		font-size: 13px;
+	}
+
+	.session_wrap_style1 h2+p {
+		padding: 0px !important;
+		width: 80%;
+	}
+
+	.logo_cont15,
+	.cont_head_st1,
+	.sbtn {
+		text-align: center;
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.session_wrap_style1 h2+p {
+		padding: 0px !important;
+		width: 80%;
+	}
+
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+
+	.session_wrap_style1 h2,
+	.mty155,
+	.bot_wrap156,
+	.volu_wrap h3,
+	.ess_wrap5 h3 {
+		font-size: 32px;
+	}
+
+	.ess_wrap5,
+	.call_cont_st1 {
+		width: 80%;
+		margin: 0 auto;
+	}
+
+	.testinomials-video-block .testinom-heading {
+		font-size: 36px;
+	}
+
+	.topics-block-container h3 {
+		font-size: 32px;
+	}
+}
+
+@media only screen and (min-width: 425px) and (max-width: 575px) {
+	#enquiryForm .recaptcha-wrapper {
+		margin: 0 auto 0 0;
+	}
+
+	.session_wrap_style1 h2,
+	.mty155,
+	.bot_wrap156,
+	.volu_wrap h3,
+	.ess_wrap5 h3 {
+		font-size: 30px;
+	}
+
+	.testinomials-video-block .testinom-heading {
+		font-size: 32px;
+	}
+
+	.topics-block-container h3 {
+		font-size: 30px;
+	}
+
+	/* .ess_wrap5,
+	.call_cont_st1 {
+		width: 80%;
+		margin: 0 auto;
+	} */
+
+	#myModal .modal-confirm .icon-box {
+		width: 80px;
+		height: 80px;
+	}
+}
+
+@media only screen and (min-width: 375px) and (max-width: 424px) {
+
+	.session_wrap_style1 h2,
+	.mty155,
+	.bot_wrap156,
+	.volu_wrap h3,
+	.ess_wrap5 h3 {
+		font-size: 30px;
+	}
+
+	.testinomials-video-block .testinom-heading {
+		font-size: 32px;
+	}
+
+	.topics-block-container h3 {
+		font-size: 30px;
+	}
+
+	.nur_wrap3 {
+		font-size: 25px !important;
+	}
+
+	#myModal .modal-confirm .icon-box {
+		width: 72px;
+		height: 72px;
+		top: -60px;
+	}
+
+	.modal-confirm .icon-box i {
+		font-size: 46px;
+	}
+}
+
+@media screen and (max-width:374px) {
+
+	.session_wrap_style1 h2,
+	.mty155,
+	.bot_wrap156,
+	.volu_wrap h3,
+	.ess_wrap5 h3 {
+		font-size: 30px;
+	}
+
+	.testinomials-video-block .testinom-heading {
+		font-size: 30px;
+	}
+
+	.topics-block-container h3 {
+		font-size: 30px;
+	}
+
+	.nur_wrap3 {
+		font-size: 25px !important;
+	}
+
+	#myModal .modal-confirm .icon-box {
+		width: 72px;
+		height: 72px;
+		top: -60px;
+	}
+
+	.modal-confirm .icon-box i {
+		font-size: 46px;
+	}
+
+	.acc_wrap1556 h2 {
+		font-size: 22px;
 	}
 }

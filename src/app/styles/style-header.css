@@ -8198,8 +8198,10 @@ li {
 		height: 210px !important;
 	}
 
-	.members-specific-space {
-		margin-top: 135px;
+	.members-specific-space,
+	.speakers-section .member-spacing {
+		width: 70%;
+		margin: 135px auto 0;
 	}
 
 	.members-specific-space:first-child {
@@ -8208,7 +8210,7 @@ li {
 
 	.grid-res-gap {
 		display: grid;
-		grid-template-columns: 3fr 9fr !important;
+		grid-template-columns: 1fr !important;
 		gap: 20px;
 	}
 
@@ -8236,6 +8238,16 @@ li {
 		display: grid;
 		grid-template-columns: 1fr !important;
 		gap: 20px;
+	}
+
+	.grid-res-item {
+		justify-content: center;
+		display: flex;
+	}
+
+	.members-main-block .blog .inner-content h3,
+	.members-p1 {
+		text-align: center !important;
 	}
 
 	.back_wrapblue {
@@ -8325,7 +8337,7 @@ li {
 	}
 
 	.nur_wrap2 {
-		font-size: 40px !important;
+		font-size: 34px !important;
 	}
 
 	.members-specific-space {
@@ -8342,8 +8354,18 @@ li {
 
 	.grid-res-gap {
 		display: grid;
-		grid-template-columns: 4fr 8fr !important;
+		grid-template-columns: 1fr !important;
 		gap: 20px;
+	}
+
+	.members-main-block .blog .inner-content h3,
+	.members-p1 {
+		text-align: center !important;
+	}
+
+	.grid-res-item {
+		justify-content: center;
+		display: flex;
 	}
 
 	.blog .member-resp-gap {
@@ -11495,7 +11517,7 @@ input[text]:focus {
 	}
 }
 
-@media screen and (min-width:991px) and (max-width:1330px) {
+@media screen and (min-width:992px) and (max-width:1330px) {
 	.box_wrap_fot1 {
 		text-align: left;
 	}
@@ -11981,7 +12003,7 @@ input[text]:focus {
 	display: none;
 }
 
-@media screen and (max-width:912px) {
+@media screen and (max-width:991px) {
 	.whatsapp-box {
 		position: fixed;
 		bottom: 20px;
