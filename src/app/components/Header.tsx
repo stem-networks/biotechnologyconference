@@ -48,7 +48,10 @@ const Header: React.FC<HeaderProps> = ({ generalData, registerData }) => {
 
   const pathname = usePathname();
 
-
+  useEffect(() => {
+    setIsNavbarCollapsed(true);
+    setDropdownStates({});
+  }, [pathname])
 
   useEffect(() => {
     const handleScroll = () => {
