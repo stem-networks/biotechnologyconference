@@ -36,7 +36,13 @@ declare global {
 
 const Footer: React.FC<FooterProps> = ({ generalData, indexPageData }) => {
   const general = generalData?.data || {};
-  const socialLinks = generalData?.social_links || {};
+  // const socialLinks = generalData?.social_links || {};
+
+  const locationParts = [
+    general.location_name,
+    general.v1,
+    general.v2
+  ].filter((item) => item && item.trim() !== "");
 
   const oneliner: OnelinerData = indexPageData?.oneliner || {};
   const footerContent = oneliner?.footer_content?.content || "";
@@ -123,7 +129,6 @@ const Footer: React.FC<FooterProps> = ({ generalData, indexPageData }) => {
     bytes.forEach((b) => binary += String.fromCharCode(b));
     return btoa(binary);
   }
-
 
   // Submit handler
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
@@ -237,12 +242,12 @@ const Footer: React.FC<FooterProps> = ({ generalData, indexPageData }) => {
               </Link>
               <br />
               <i className="bx bxl-whatsapp"></i>{" "}
-              <Link href={`tel:${general?.whatsapp}`} title={general?.whatsapp}>
+              <Link href="https://wa.me/41774144691" target="_blank" title={general?.whatsapp}>
                 {general?.whatsapp}
               </Link>
               <br />
             </p>
-            <h4>Follow Us</h4>
+            {/* <h4>Follow Us</h4>
             <p className="followus">
               <Link
                 href={socialLinks?.facebook?.link}
@@ -268,49 +273,113 @@ const Footer: React.FC<FooterProps> = ({ generalData, indexPageData }) => {
                 <i className="bx bxl-linkedin-square"></i>
               </Link>
 
-              {/* <Link href="https://x.com/NursingCon91476" title="Nursing Conference 2025 Twitter" target="_blank">
-                            <i className='bx bxl-twitter'></i>
-                            </Link> */}
-            </p>
+              <Link href="https://x.com/NursingCon91476" title="Nursing Conference 2025 Twitter" target="_blank">
+                <i className='bx bxl-twitter'></i>
+              </Link>
+            </p> */}
+
+            <div className="business-headquarters-block">
+              <h4>Business Headquarters</h4>
+              <p className="followus">
+                Plot no. 85 & 88, Sardar Patel Nagar Rd, <br />Beside Community Hall,
+                Sardar Patel Nagar, Hydernagar, Kukatpally,
+                Hyderabad,  <br />Telangana
+                500085
+              </p>
+            </div>
           </div>
 
           <div className="menu_footer">
             <h4>Quick Links</h4>
-            <ul className="tmp-link-animation">
-              <li>
-                <Link href="/" title="Home">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link href="/sessions" title="Sessions">
-                  Sessions
-                </Link>
-              </li>
-              <li>
-                <Link href="/guidelines" title="Guidelines">
-                  Guidelines
-                </Link>
-              </li>
-              <li>
-                <Link href="/faqs" title="FAQs">
-                  FAQs
-                </Link>
-              </li>
-              <li>
+            <div className="quick-links-block">
+              <ul className="tmp-link-animation">
+                <li>
+                  <Link href="/" title="Home">
+                    Home
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/sessions" title="Sessions">
+                    Sessions
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/guidelines" title="Guidelines">
+                    Guidelines
+                  </Link>
+                </li>
+
+              </ul>
+              <ul className="tmp-link-animation">
+                <li>
+                  <Link href="/faqs" title="FAQs">
+                    FAQs
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/call-for-abstract-submission"
+                    title="Submit Abstract"
+                  >
+                    Submit Abstract
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/register" title="Register">
+                    Register
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            <div className="event-location-block">
+              <h4>Event Location</h4>
+              <p className="followus">
+                {locationParts.map((item: string, index: number) => (
+                  <span key={index}>{item}
+                    {index !== locationParts.length - 1 && ","}
+                    <br /></span>
+                ))
+
+                }
+                {/* Salles Ciutat del Prat Barcelona Airport,<br />
+                Barcelona,<br />
+                Spain */}
+              </p>
+            </div>
+
+            {/* <div className="follows-block">
+              <h4>Follow Us</h4>
+              <p className="followus">
                 <Link
-                  href="/call-for-abstract-submission"
-                  title="Submit Abstract"
+                  href={socialLinks?.facebook?.link}
+                  title={socialLinks?.facebook?.title}
+                  target="_blank"
                 >
-                  Submit Abstract
+                  <i className="bx bxl-facebook"></i>
                 </Link>
-              </li>
-              <li>
-                <Link href="/register" title="Register">
-                  Register
+
+                <Link
+                  href={socialLinks?.instagram?.link}
+                  title={socialLinks?.instagram?.title}
+                  target="_blank"
+                >
+                  <i className="bx bxl-instagram"></i>
                 </Link>
-              </li>
-            </ul>
+
+                <Link
+                  href={socialLinks?.linkedin?.link}
+                  title={socialLinks?.linkedin?.title}
+                  target="_blank"
+                >
+                  <i className="bx bxl-linkedin-square"></i>
+                </Link>
+
+              <Link href="https://x.com/NursingCon91476" title="Nursing Conference 2025 Twitter" target="_blank">
+                <i className='bx bxl-twitter'></i>
+              </Link>
+              </p>
+            </div> */}
           </div>
 
           <div className="menu_footer2">
