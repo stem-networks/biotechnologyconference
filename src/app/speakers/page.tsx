@@ -25,6 +25,14 @@ const speakersData: Speaker[] = [
     },
     {
         id: 2,
+        image: "/images/speakers-2026/Martin_Von_Bergen.jpg",
+        name: "Martin Von Bergen",
+        institution: "Helmholtz Centre for Environmental Research",
+        country: "Germany",
+        altText: "Martin Von Bergen",
+    },
+    {
+        id: 3,
         image: "/images/speakers-2026/Shu_Chun_Chang.webp",
         name: "Shu-Chun Chang",
         institution: "Taipei Medical University",
@@ -32,7 +40,7 @@ const speakersData: Speaker[] = [
         altText: "Shu-Chun Chang",
     },
     {
-        id: 3,
+        id: 4,
         image: "/images/speakers-2026/Willie_Sai_Ho_Chan.jpg",
         name: "Willie Sai Ho Chan",
         institution: "China Medical University",
@@ -40,7 +48,7 @@ const speakersData: Speaker[] = [
         altText: "Willie Sai Ho Chan",
     },
     {
-        id: 4,
+        id: 5,
         image: "/images/speakers-2026/Aalaa_Saad.png",
         name: "Aalaa Saad",
         institution: "Animal Health Research Institute",
@@ -48,7 +56,7 @@ const speakersData: Speaker[] = [
         altText: "Aalaa Saad",
     },
     {
-        id: 5,
+        id: 6,
         image: "/images/speakers-2026/Aziz_Maleki.jpg",
         name: "Aziz Maleki",
         institution: "Zanjan University of Medical Sciences",
@@ -56,7 +64,7 @@ const speakersData: Speaker[] = [
         altText: "Aziz Maleki",
     },
     {
-        id: 6,
+        id: 7,
         image: "/images/speakers-2026/Ved_Prakash_Singh.jpg",
         name: "Ved Prakash Singh",
         institution: "Mizoram University",
@@ -64,7 +72,7 @@ const speakersData: Speaker[] = [
         altText: "Ved Prakash Singh",
     },
     {
-        id: 7,
+        id: 8,
         image: "/images/speakers-2026/Shanmugam_Gunalan_Pillai.jpg",
         name: "Shanmugam Gunalan Pillai",
         institution: "AMET University",
@@ -72,7 +80,7 @@ const speakersData: Speaker[] = [
         altText: "Shanmugam Gunalan Pillai",
     },
     {
-        id: 8,
+        id: 9,
         image: "/images/speakers-2026/tarek_aboul.jpg",
         name: "Tarek Aboul Fadl",
         institution: "Assiut University",
