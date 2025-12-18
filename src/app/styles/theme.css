@@ -94,8 +94,15 @@ a {
 }
 
 .sticky-header .logo {
-	padding: 0px 0px 2px;
-	max-width: 125px;
+	width: 125px;
+	padding: 10px 0 2px;
+}
+
+.sticky-header .logo .img-responsive {
+	width: 125px;
+	max-width: 100%;
+	height: 40px;
+	display: block;
 }
 
 .sticky-header .logo .sti-logo {

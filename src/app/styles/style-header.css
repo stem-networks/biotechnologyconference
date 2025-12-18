@@ -628,10 +628,10 @@ li {
 	-o-transition: all 500ms ease;
 }
 
-.sticky-header .logo {
+/* .sticky-header .logo {
 	padding: 10px 0px 2px;
 	max-width: 125px;
-}
+} */
 
 .sticky-header .logo img {
 	width: 100%;
@@ -5353,11 +5353,17 @@ li {
 	padding: 5px 0px 0px 0px;
 }
 
-.max_wrap156 .logo {
+.max_wrap156 {
+	display: block;
 	max-width: 300px;
 	width: 100%;
-	max-height: 70px;
-	height: auto;
+	height: 70px;
+}
+
+.max_wrap156 .logo {
+	width: auto;
+	max-width: 100%;
+	height: 100%;
 	object-fit: fill;
 }
 

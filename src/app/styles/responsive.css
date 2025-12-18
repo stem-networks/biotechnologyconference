@@ -1166,7 +1166,7 @@ Updating Responsive
 	}
 
 	.main-menu .navigation>li>a {
-		font-size: 16px;
+		font-size: 15px;
 	}
 
 	.sticky-header .main-menu .navigation>li>a {
@@ -1215,7 +1215,7 @@ Updating Responsive
 	}
 
 	.main-menu .navigation>li>a {
-		font-size: 16px;
+		font-size: 15px;
 	}
 
 	.sticky-header .main-menu .navigation>li>a {
@@ -1429,5 +1429,11 @@ Updating Responsive
 
 	.acc_wrap1556 h2 {
 		font-size: 22px;
+	}
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+	.main-menu .navigation>li>a {
+		font-size: 17px;
 	}
 }
