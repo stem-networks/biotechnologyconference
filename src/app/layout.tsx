@@ -89,6 +89,10 @@ export async function generateMetadata(): Promise<Metadata> {
       openGraph: {
         images: `${general?.site_url || ""}/images/images/opengraph_image.jpg`,
       },
+      //  Add Google site verification here 
+      verification: {
+        google: process.env.GSC_VERIFICATION_TOKEN || "",
+      },
     };
   } catch (error) {
     console.error("Metadata generation error in layout:", error);
@@ -164,6 +168,7 @@ export default async function RootLayout({
     name: eventName,
     startDate: formattedStartDate,
     endDate: formattedEndDate,
+    eventStatus: "https://schema.org/EventScheduled",
     eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
     image: `${general?.site_url || ""}/images/images/opengraph_image.jpg`,
     description: register[0]?.content || "",
@@ -182,10 +187,20 @@ export default async function RootLayout({
     offers: {
       "@type": "Offer",
       url: `${general?.site_url || ""}/register`,
-      price: general?.offerPrice || "$449",
+      price: general?.offerPrice || "449",
       priceCurrency: general?.offerCurrency || "USD",
+      validFrom: "2025-08-22T00:00",
       itemCondition: "https://schema.org/NewCondition",
       availability: "https://schema.org/InStock",
+    },
+    performer: {
+      "@type": "PerformingGroup",
+      name: "STEM Network",
+    },
+    organizer: {
+      "@type": "Organization",
+      name: general?.clname || "Tech Conference Org",
+      url: general?.site_url || "",
     },
   };
 
