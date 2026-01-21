@@ -342,7 +342,7 @@ const VolunteerCommunity: React.FC<VolunteerCommunityProps> = ({
 
   return (
     <div>
-      <div
+      {/* <div
         className="volue_wrap"
         style={{ backgroundImage: `url('/images/images/bg2.webp')` }}
       >
@@ -389,7 +389,7 @@ const VolunteerCommunity: React.FC<VolunteerCommunityProps> = ({
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       <div
         className="cont_wrap_add  wow fadeInUp"
