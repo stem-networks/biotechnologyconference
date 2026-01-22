@@ -31,6 +31,14 @@ const speakersData: Speaker[] = [
   },
   {
     id: 3,
+    image: "/images/speakers-2026/Kuo_Ping_CHIU.webp",
+    name: "Kuo-Ping Chiu",
+    institution: "Top Science Biotechnologies Inc",
+    country: "Taiwan",
+    altText: "Kuo-Ping Chiu",
+  },
+  {
+    id: 4,
     image: "/images/speakers-2026/Andreas_M_Papas.webp",
     name: "Andreas M Papas",
     institution: "East Tennessee State University",
@@ -38,7 +46,7 @@ const speakersData: Speaker[] = [
     altText: "Andreas M Papas",
   },
   {
-    id: 4,
+    id: 5,
     image: "/images/speakers-2026/Shu_Chun_Chang.webp",
     name: "Shu-Chun Chang",
     institution: "Taipei Medical University",
@@ -46,20 +54,12 @@ const speakersData: Speaker[] = [
     altText: "Shu-Chun Chang",
   },
   {
-    id: 5,
+    id: 6,
     image: "/images/speakers-2026/Willie_Sai_Ho_Chan.jpg",
     name: "Willie Sai Ho Chan",
     institution: "China Medical University",
     country: "Hong Kong",
     altText: "Willie Sai Ho Chan",
-  },
-  {
-    id: 6,
-    image: "/images/speakers-2026/Aalaa_Saad.png",
-    name: "Aalaa Saad",
-    institution: "Animal Health Research Institute",
-    country: "Egypt",
-    altText: "Aalaa Saad",
   },
 ];
 
