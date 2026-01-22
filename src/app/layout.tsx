@@ -24,6 +24,7 @@ import {
 import MediaCollaborators from "./components/MediaCollaborators";
 import WowProvider from "./components/WowProvider";
 import WhatsAppWidgetMobile from "./components/WhatsappWidgetMobile";
+import DeadlineSidebar from "./components/DeadlineSidebar";
 
 async function safeFetch<T>(fn: () => Promise<T>, fallback: T): Promise<T> {
   try {
@@ -296,6 +297,7 @@ export default async function RootLayout({
         <PartneredContent />
         <Footer indexPageData={indexPageData} generalData={generaldata} />
         <WhatsAppWidgetMobile />
+        <DeadlineSidebar indexPageData={indexPageData} />
       </body>
     </html>
   );
