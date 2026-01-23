@@ -76,7 +76,7 @@ const DeadlineSidebar: React.FC<DeadlineSidebarProps> = ({ indexPageData }) => {
                                 {/* <span className="dot-number">1</span> */}
                                 <i className="fa fa-file-text"></i>
                             </div>
-                            <Link href="/call-for-abstract-submission" className="deadline-info">
+                            <Link href="/call-for-abstract-submission" title="Abstract Submission" className="deadline-info">
                                 <div className="date-badge">
                                     <span className="calendar-icon"><i className="fa fa-calender"></i></span>
                                     <span>{parseDate(importantDates[0]?.date || "")}</span>
@@ -91,7 +91,7 @@ const DeadlineSidebar: React.FC<DeadlineSidebarProps> = ({ indexPageData }) => {
                                 {/* <span className="dot-number">2</span> */}
                                 <i className="fa fa-ticket"></i>
                             </div>
-                            <Link href="/register" className="deadline-info">
+                            <Link href="/register" title="Early Bird Registration" className="deadline-info">
                                 <div className="date-badge">
                                     {/* <span className="calendar-icon">🎟️</span> */}
                                     <span>{parseDate(importantDates[1]?.date || "")}</span>
